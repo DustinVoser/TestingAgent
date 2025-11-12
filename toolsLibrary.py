@@ -78,7 +78,7 @@ def get_SQL_Texts(instigationids:list[int]):
             text = [
                 f"Instigation {safe_str(row.get('I_Number'))} – {safe_str(row.get('I_Title'))}",
                 f"TypeID: {safe_str(row.get('I_InstigationTypeid'))}, "
-                f"Creator: {safe_str(row.get('I_CreatorUserid'))}, Responsible: {safe_str(row.get('I_ResponsibleUserid'))}",
+                f"Creator: {safe_str(row.get('User_FirstName'))}, {safe_str(row.get('User_LastName'))}",
                 f"Due: {format_value(row.get('I_DueDate'))}, Classification: {safe_str(row.get('I_Classification'))}",
                 f"Description: {safe_str(row.get('I_Description'))}\n"
             ]
