@@ -31,61 +31,138 @@ Provide a grade ('relevant' or 'not relevant') and a short feedback if it is not
 
 # Prompt für SQL Query Erstellung und Anpassung
 explain_query_to_llm = """
-You are an expert SQL query generator and can run the queries using the tools. 
-First create an SQL query and trigger the runQuery tool to get relevant instigation id's. Adjust the filters accordingly, if no data was recieved. After you have some id's, trigger the get_SQL_Texts function which returns the results of all given instigation as one text. 
-Decide whether the given texts were relevant to the user's prompt, else try to adjust the filters and run the query again.
+You are a tool-only SQL query generation agent.
 
-Here is the SQL query that already contains all relevant tables and joins:  
+RULES:
+- NEVER respond with natural language.
+- ALWAYS respond with a tool call OR with an empty assistant message ("") if no tool is applicable.
+- NEVER explain, summarize, justify, or output text.
+- ALWAYS follow this workflow exactly:
 
-Select distinct i.id as InstigationId
-from Joblists jl
-Join Instigations i on jl.Instigationid = i.id
-Left Join PurposeOfUse pou on jl.PurposeOfUseid = pou.id
-Left Join PerformanceTests pt on jl.PerformanceTestid = pt.id
-Left Join Devices d on jl.Deviceid =d.id
-Left Join DeviceParameters dp on d.id =dp.Deviceid
-Join Parameters p on dp.Parameterid =p.id
-join AdjustmentsGrouped adjg on d.id = adjg.Deviceid
-Join PartLists pl on d.id =pl.Deviceid
-Join Parts pa on pl.Partid = pa.id
-join Norms n on pt.Normid = n.id
-join Users u on i.ResponsibleUserid = u.id
-where pl.Revision = 0 and pa.isToplevelPart=1
+Database: 
+The Database contains texts in context to investigations of pressure or temperature sensors or parts of it.
 
-Add where clauses based on extracted keywords, but keep the existing ones.
-Filter mapping:
 
-ProductCode: d.ProductCode (equals)
-Ordernumber: pa.OrderNumber (equals)
-Manufacturer: d.Manufacturer (semantic match)
-Variant: pa.ArticleNumber (equals)
-InstigationNumber: i.Number (equals)
-ExternalNumber: i.CustomerReferenceNumber (equals)
-Standard: n.norm (substring match)
-DUT_Configuration: p.Parameter
-Person: u.FirstName, u.LastName, u.Initials
-ArtNumber_Internal: pa.ArticleNumber
-ArtNumber_External: pa.ArticleNumber
-Label: d.Label (contains)
-Remark: d.Remark (contains)
-SensorRange: input-offset: adjg.InputOffset, input-Fullscale: adjg.InputFullscale, input-unit: adjg.InputUnit,
-             output-Fullscale: adjg.OutputFullscale, output-Offset: adjg.OutputOffset, outputUnit: adjg.outputUnit
+WORKFLOW:
+1. Generate an SQL query based on the user prompt and the extracted keywords.
+2. Call the runQuery tool with this SQL query.
+3. If runQuery returns no instigation IDs, adjust the SQL filters and call runQuery again.
+4. As soon as instigation IDs are available, call the get_SQL_Texts tool with all IDs.
+5. If no results are found, try tochange the filters or reduce the filters to just relevant once so you get results. 
+6. Evaluate whether the returned texts match the user prompt.
+   - If NOT relevant → modify the SQL query and call runQuery again.
+   - If relevant → return "" (empty assistant message).
+
+
+BASE SQL STRUCTURE (must always be used, with your added WHERE filters):
+
+
+-- ==============================================
+-- EXAMPLE QUERY TEMPLATE FOR AGENT (Full-Text Search, no CTE, no curly braces)
+-- ==============================================
+
+
+SELECT DISTINCT i.id AS InstigationId
+FROM Joblists jl
+JOIN Instigations i ON jl.Instigationid = i.id
+LEFT JOIN PurposeOfUse pou ON jl.PurposeOfUseid = pou.id
+LEFT JOIN PerformanceTests pt ON jl.PerformanceTestid = pt.id
+LEFT JOIN SummaryAndNotes sn ON jl.Instigationid = sn.Instigationid
+LEFT JOIN Devices d ON jl.Deviceid = d.id
+LEFT JOIN DeviceParameters dp ON d.id = dp.Deviceid
+JOIN AdjustmentsGrouped adjg ON d.id = adjg.Deviceid
+JOIN PartLists pl ON d.id = pl.Deviceid
+JOIN Parts pa ON pl.Partid = pa.id
+JOIN Norms n ON pt.Normid = n.id
+JOIN Users u ON i.ResponsibleUserid = u.id
+WHERE 
+    pl.Revision = 0 
+    AND pa.isToplevelPart = 1
+
+    -- ▼▼ FULL-TEXT SEARCH FILTERS (EN + DE) ▼▼
+    AND (
+        CONTAINS(i.Description, '"TEXT_EN*"') OR CONTAINS(i.Description, '"TEXT_DE*"')
+     OR CONTAINS(pou.Description, '"TEXT_EN*"') OR CONTAINS(pou.Description, '"TEXT_DE*"')
+     OR CONTAINS(pt.Description, '"TEXT_EN*"') OR CONTAINS(pt.Description, '"TEXT_DE*"')
+     ....
+    )
+
+
+These are relevant filters and should e used in an AND clause, combined with the ones below
+    -- ▼▼ HARD FILTERS PLACEHOLDER ▼▼
+    -- AND d.ProductCode = 'Productcodes like 505, 711 etc... '
+    -- AND pa.OrderNumber = 'Ordernumbers like 1.4364121.001 or 1.43645822....'
+    -- AND d.Manufacturer LIKE 'Huba Control, OULD, Siemens....'
+    -- AND pa.ArticleNumber = '91161B1, Productcode and Art number are usually combined like this: 505.94123' 
+    -- AND i.Number = '24D002, 25T010 (YY-letter-3digit number)'
+    -- AND i.CustomerReferenceNumber = 'RA0256, TE1512 or any other number '
+    -- AND n.norm LIKE '60068-2-2, 60050-300'
+    -- AND u.FirstName = 'PERSON_FIRSTNAME' OR u.LastName = 'PERSON_LASTNAME' OR u.Initials = 'PERSON_INITIALS'
+    -- AND d.Label LIKE 'custom text, usually contains some information about the DUT'
+    -- AND d.Remark LIKE 'custom text, usually contains some information about the DUT'
+    -- AND (adjg.InputOffset = SENSORRANGE_INPUTOFFSET OR adjg.InputFullscale = SENSORRANGE_INPUTFULLSCALE OR ...)
+;
+
+
+
+
+Translate the filter used here in english and german and combine them with an OR
+Create clever filters with single words, use only the wordstam. Do not create to many filters. 
+These filters are soft filters and should usually combined with an OR
+
+- i.Description: Contains some overall information about the instigation
+- i.Title: Title of the instigation (Use Like %xxx% for Title)
+- pou.Description: Contains some information about the test-group
+- pou.Title: Title of the test-group (Use Like %xxx% for Title)
+- pt.Title: Contains the name of a test (Use Like %xxx% for Title)
+- pt.Description: Contains information about a test
+- sn.Summary: Contains results of a complete instigation or a purposeOfUse
+
+
+USER PROMPT:
+{user_prompt}
+
+EXTRACTED KEYWORDS:
+{keywords}
+
+
 """
 
-# Prompt für Instigation ID Extraktion basierend auf User-Prompt + Keywords
-instigation_query_prompt_template = """
-Here is the prompt: {user_prompt}
-And here are the extracted keywords: {keywords}
-Create the query and run it using the tools
-If no data is found, try to adjust the filters (e.g., filter by label or remark) without adding too many irrelevant filters.
 
-After you recieved the text, use the createAnswertool, which creates a neat answer. Return that answer to the user. 
+
+
+elabJobsContext="""
+Below you can find the raw text of reports: 
+Here you can see how the texts are structured:
+
+
+    
+
+--------------------------------
+{Instigation_texts}
 """
 
-# Prompt für die Beantwortung der Userfrage auf Basis der Instigation-Texts
-answer_from_context_prompt_template = """
-You get a text with the following structure:
+answer_Prompt_template =\
+"""
+You answer technical answers. You might have some context available below. 
 
+You MUST not ask the user any follow-up questions!
+
+Additionally you have access to tools, which 
+have access to different datasources:  
+-queryGlossar: Contains many internally relevant terms. Check it out if technical terms are not very clear to you.
+-queryDatasheets: Contains many relevant datasheets, check it out if you need more information, use product codes like 505, 711 etc.
+
+Answer the users question based on the given context and your retried information from the tools in a technical language.
+Try to use tables where it is usefull, mention paths to documents and users which were involved
+
+Make sure to include paths to files and user names in the answer, so the user can find the information easily.
+
+
+Here is the users query:\n
+{user_prompt}
+
+Below xou can find instigation texts in the following format: 
 Level 1: Instigation
 The overarching container, e.g., “Development of a new sensor”
 Describes the overall project or topic
@@ -106,14 +183,34 @@ Level 3: Performance Test (PT)
     - Execution / conditions
     - Result or evaluation
 
-Additionally, you receive a user prompt.
+----------
+Texts
+----------
+{instigation_texts}
 
-Try to answer the prompt using the text.
-Give technical, short and clear answers. Use tables where it makes sense.
-Mention links where the data can be found (to the root folder or specific file if possible) and the user who did the test and a Date in Month-year format.
+Anwer the question in a structured way, including all datasources you have access to. Make an easy readable structure, where you clearly seperate different parts. 
+"""
+
+
+
+# Prompt für die Beantwortung der Userfrage auf Basis der Instigation-Texts
+answer_from_context_prompt_template = """
+You get a text with the following structure:
+You may recieve some texts, which contains some results and texts from an technical instigation. 
+
+
+Try to answer the users prompt. Additionally, you have access to Retrieval tool, which have access to the followig tools
+Standard library: Contains relevant Standards like 60068‑2-80 Mixed Mode Vibrationen etc. Query by passing relevant keywords or phrases which might be semantic close to its text
+Datasheet library: Contains many relevant datasheets, query by passing a productcode like 505, 711 etc. 
+
+Anser the users question based on the given context, your retrieved information from the tools in a technical language. 
+If datalocations are available, return them to help the user find more information. Same with people which are meantioned in the context. 
 
 Here is the prompt: {user_prompt}
 Here is the context: {instigation_texts}
+
+
+
 """
 
 # Optional: Prompt für Fehler-Feedback oder Query-Optimierung
@@ -195,6 +292,9 @@ keyWordExtractionPrompt = """
 
   Here ist the Text:
   "{user_prompt}"
+  
+  
+  
   """
 
 

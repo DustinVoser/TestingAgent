@@ -1,8 +1,10 @@
+from typing import List
+
 from langchain.chat_models import init_chat_model
 from langchain_core.tools import tool
-
 import PromptLibrary
-from Datasources import ELabJobsDB
+from Datasources import ELabJobsDB, ChromaDB
+from Functions.classLibrary import Prompt
 
 
 @tool
@@ -12,11 +14,18 @@ def runQueryTool(prompt: str):
     result=elab_DB.runQuery(prompt)
     return result
 
+
 @tool
+def get_SQL_Texts_Tool(instigationids:list[int]):
+    """
+     Takes a list with unique instigation id's and queries all summarys from them. Returns a text, containing the texts of the given instigations.
+     """
+    return get_SQL_Texts(instigationids)
+
+
+
 def get_SQL_Texts(instigationids:list[int]):
-    """
-    Takes a list with unique instigation id's and queries all summarys from them. Returns a text, containing the texts of the given instigations.
-    """
+
 
     elab=ELabJobsDB()
 
@@ -93,7 +102,7 @@ def get_SQL_Texts(instigationids:list[int]):
         return {c: (None if pd.isna(row.get(c)) else row.get(c)) for c in cols}
 
     inst_cols = ["I_Instigationid", "I_DateTimeStamp", "I_InstigationTypeid", "I_Number", "I_Title",
-                 "I_Description", "I_CreatorUserid", "I_ResponsibleUserid", "I_DueDate",
+                 "I_Description", "User_FirstName", "User_LastName", "I_DueDate",
                  "I_CustomerReferenceNumber", "I_EndDate", "I_Classification"]
     pou_cols = ["PurposeOfUse_id", "PurposeOfUse_Instigationid", "PurposeOfUse_Title",
                 "PurposeOfUse_Description", "PurposeOfUse_DueDate", "PurposeOfUse_Number"]
@@ -145,16 +154,33 @@ def get_SQL_Texts(instigationids:list[int]):
     # --- Ergebnis als Text ---
     if not all_results: return {"instigation_texts": ""}
     result_df = pd.DataFrame(all_results)
-    return {"instigation_texts": PromptLibrary.answer_from_context_prompt_template+"\n\n"+dataframe_to_text(result_df)}
+    return {"instigation_texts":dataframe_to_text(result_df)}
+
 
 @tool
-def createAnswer(prompt: str, context: str):
-    """This tool takes the original user prompt and the context retrieved from the get_SQL_Texts tool and creates a neat answer"""
+def triggerDatasheetsRetrieval(keywords:list[str]):
+    """ Runs a RAG"""
+
+    vector = ChromaDB("normDB")
+    results=vector.keywordsRetrieval(keywords, n_results=2)
+
+    return results
+
+@tool
+def queryGlossar(prompt: str):
+    """You can lookup a word or definition by passing a semantic close query"""
+    print("Glossar was triggered")
+    vector = ChromaDB("glossar")
+    p=Prompt()
+    p.user_prompt=prompt
+    results = vector.semanticRetrieval(p, n_results=3)
+    return results
 
 
-    prompt=PromptLibrary.answer_from_context_prompt_template.format(user_prompt=prompt, instigation_texts=context)
-    llm_light = init_chat_model("gpt-5-mini")
-    result = llm_light.invoke(prompt)
-    print("TOOOOOOOOOOOOOOOOOOOOOOOOOOOLRESULT")
-    print(result.content)
-    return {"answer": result.content}
+@tool
+def queryDatasheets(productCodes: List[str]):
+    """Takes a list of product codes and returns available datasheets."""
+    print ("Datasheets were triggered")
+    vector = ChromaDB("datasheets")
+    results = vector.keywordsRetrieval(productCodes, n_results=3)
+    return results

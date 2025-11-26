@@ -15,7 +15,7 @@ import numpy as np
 from Datasources import ELabJobsDB
 import PromptLibrary
 import SupportFunctions
-import toolsLibrary
+from toolsLibrary import *
 
 class State(MessagesState):
     combined_output: str
@@ -32,12 +32,14 @@ class State(MessagesState):
 
 
 class Agent: 
-    def __init__(self):
-
+    def __init__(self, prompt: str):
+        self.prompt = prompt
         api_key = os.environ.get("OPENAI_API_KEY")
 
         self.llm_light = init_chat_model("gpt-5-mini")
-        self.llm_strong = init_chat_model("gpt-5")
+        self.llm_very_light = init_chat_model("gpt-5-nano")
+        self.llm_strong = init_chat_model("gpt-5.1")
+
         self.elab_DB= ELabJobsDB()
         self.queryLimiter = 0
         self.contextLimiter = 0
@@ -58,29 +60,64 @@ class Agent:
 
         return {"keywords": [item.keyword for item in result.keywords]}
 
-
-
-
-    def llm_call(self, State: State):
+    def sql_agent(self, State: State):
         user_prompt = State["messages"][-1].content
         keywords = State["keywords"]
-        tools = [toolsLibrary.runQueryTool, toolsLibrary.get_SQL_Texts, toolsLibrary.createAnswer]
+
+        tools = [runQueryTool, get_SQL_Texts_Tool]
         self.tools_by_name = {tool.name: tool for tool in tools}
-        llm_w_tools=self.llm_strong.bind_tools(tools)
+
+        # LLM mit Tools binden
+        llm_with_tools = self.llm_strong.bind_tools(tools)
+
+        # Conversation vorbereiten
         if State.get("contextFeedback"):
             sql = State["query"]
             feedback = State["query"]
-            prompt=PromptLibrary.sql_feedback_prompt_template.format(sql=sql,feedback=feedback, keywords=keywords)
-            conversation = [
-                {"role": "system", "content": PromptLibrary.explain_query_to_llm},
-                {"role": "user", "content": prompt},
-            ]
+            prompt = PromptLibrary.sql_feedback_prompt_template.format(
+                sql=sql,
+                feedback=feedback,
+                keywords=keywords
+            )
+            system_message = {
+                "role": "system",
+                "content": PromptLibrary.explain_query_to_llm
+            }
+            user_message = {"role": "user", "content": prompt}
+            base_conversation = [system_message, user_message]
 
         else:
-            prompt=PromptLibrary.instigation_query_prompt_template.format(user_prompt=user_prompt,keywords=keywords)
+            system_message = {
+                "role": "system",
+                "content": PromptLibrary.explain_query_to_llm
+            }
+            user_message = {
+                "role": "user",
+                "content": PromptLibrary.explain_query_to_llm.format(
+                    user_prompt=user_prompt,
+                    keywords=keywords
+                )
+            }
+            base_conversation = [system_message, user_message]
 
-            conversation =  PromptLibrary.explain_query_to_llm + "\n\n" + prompt
+        next_step = llm_with_tools.invoke(base_conversation + State["messages"])
 
+        return {"messages": [next_step]}
+
+
+
+    def createAnswerAgent(self, State: State):
+        user_prompt = State["messages"][-1].content
+        keywords = State["keywords"]
+        instigation_texts = State["messages"][-1]
+
+        tools2 = [queryGlossar, queryDatasheets]
+
+        self.tools_by_name2 = {tool.name: tool for tool in tools2}
+        llm_w_tools=self.llm_strong.bind_tools(tools2)
+
+        #prompt=PromptLibrary.instigation_query_prompt_template.format(user_prompt=user_prompt,keywords=keywords)
+        conversation =  PromptLibrary.answer_Prompt_template.format(user_prompt=user_prompt,instigation_texts=instigation_texts)
 
         return {
             "messages": [
@@ -95,14 +132,7 @@ class Agent:
             ]
         }
 
-    def createAnswer(self, State: State):
 
-        user_prompt = State["messages"][0].content
-        instigation_texts=State["messages"].toolmessage
-
-        prompt=PromptLibrary.answer_from_context_prompt_template.format(user_prompt=user_prompt, instigation_texts=instigation_texts)
-        result = self.llm_light.invoke(prompt)
-        return {"answer": result.content}
 
     def checkKeyWords(self, State: State):
         """Gate function to check if any keywords are present."""
@@ -117,18 +147,10 @@ class Agent:
             f"This is the context:\n{State['instigation_texts']} \n\nThis is the users Prompt:\n{State['messages'][0]} ")
         return {"contextRelevant": grade.grade, "contextFeedback": grade.feedback}
 
-    def routeisContextRelevant(self, State: State):
-        """Route back to joke generator or end based upon feedback from the evaluator"""
-        if State["contextRelevant"] == "relevant":
-            return "createAnswer"
-        elif State["sqlFeedback"] == "not relevant":
-            if self.contextLimiter <= 2:
-                self.contextLimiter += 1
-                return "llm_call"
-            else:
-                return "createAnswer"
 
-    def  toolcallTriggered(self, State:State)->Literal["tool_node", END]:
+
+
+    def  toolcallTriggered(self, State:State)->Literal["tool_node", "createAnswerAgent"]:
         """Route back to joke generator or end based upon feedback from the evaluator"""
 
         messages = State["messages"]
@@ -138,8 +160,50 @@ class Agent:
         if last_message.tool_calls:
             return "tool_node"
         # Otherwise, we stop (reply to the user)
+        return "createAnswerAgent"
+
+
+    def  toolcallTriggered2(self, State:State)->Literal["answer_tool_node", END]:
+        """Route back to joke generator or end based upon feedback from the evaluator"""
+
+        messages = State["messages"]
+        last_message = messages[-1]
+
+        # If the LLM makes a tool call, then perform an action
+        if last_message.tool_calls:
+            return "answer_tool_node"
+        # Otherwise, we stop (reply to the user)
         return END
 
+    def routeToolCallResult(self, State: dict):
+        last_message = State["messages"][-1]
+
+        # 🔌 Datenbankverbindung prüfen
+        if isinstance(last_message.content, str) and "08001" in last_message.content:
+            print("❌ No connection to database!")
+            return END
+
+        # 🛠 Zähler für getSQLTexts hochzählen
+        tool_calls = getattr(last_message, "tool_calls", [])
+        if tool_calls:  # Wenn mindestens ein Tool aufgerufen wurde
+            last_tool_name = tool_calls[-1]["name"]  # Name des letzten Tool-Calls
+        else:
+            last_tool_name = None
+
+        # Zähler aus State holen oder initialisieren
+        counter = State.get("getSQLTexts_counter", 0)
+
+        if last_tool_name == "get_SQL_Texts_Tool":
+            counter += 1
+            State["getSQLTexts_counter"] = counter  # Wichtig: explizit speichern
+            print(f"🔢 getSQLTexts wurde {counter} mal aufgerufen")
+
+            if counter >= 3:
+                print("✅ Maximal 3 Aufrufe erreicht, weiter zu createAnswerAgent")
+                return "createAnswerAgent"
+
+        # 🧩 Standardweg
+        return "sql_agent"
 
     def instigationsRecieved(self, State: State):
         print(State)
@@ -154,41 +218,70 @@ class Agent:
         return {"messages": result}
 
 
+    def answer_tool_node(self, state: dict):
+        """Performs the tool call"""
+        result = []
+        for tool_call in state["messages"][-1].tool_calls: tool = self.tools_by_name2[tool_call["name"]]
+        observation = tool.invoke(tool_call["args"])
+        result.append(ToolMessage(content=observation, tool_call_id=tool_call["id"]))
+        return {"messages": result}
+
+
     def createAgent(self):
         workflow = StateGraph(State)
         workflow.add_node("keyWordExtractor", self.keyWordExtractor)
-        workflow.add_node("llm_call", self.llm_call)
+        workflow.add_node("sql_agent", self.sql_agent)
         #workflow.add_node("get_SQL_Texts", self.get_SQL_Texts)
         workflow.add_node("checkContextRelevance", self.checkContextRelevance)
         workflow.add_node("tool_node", self.tool_node)
-
-
+        workflow.add_node("answer_tool_node", self.answer_tool_node)
+        workflow.add_node("routeToolCallResult", self.routeToolCallResult)
+        workflow.add_node("createAnswerAgent", self.createAnswerAgent)
         workflow.add_edge(START, "keyWordExtractor")
 
-        workflow.add_conditional_edges(
-            "keyWordExtractor", self.checkKeyWords, {"Fail": END, "Pass": "llm_call"})
-        # Add edges to connect nodes
 
         workflow.add_conditional_edges(
-            "llm_call",
+            "keyWordExtractor", self.checkKeyWords, {"Fail": "createAnswerAgent", "Pass": "sql_agent"})
+        # Add edges to connect nodes
+
+
+        workflow.add_conditional_edges(
+            "sql_agent",
             self.toolcallTriggered,
-            ["tool_node", END]
+            ["tool_node", "createAnswerAgent"]
 
         )
 
-        workflow.add_edge("tool_node", "llm_call")
-        #workflow.add_edge("llm_call", "get_SQL_Texts")
+        workflow.add_conditional_edges(
+            "createAnswerAgent",
+            self.toolcallTriggered2,
+            ["answer_tool_node", END]
+
+        )
+
+
+        #Route if no connection available or max runs of sql db was done
+        workflow.add_conditional_edges("tool_node", self.routeToolCallResult, ["sql_agent","createAnswerAgent", END])
+
+        #workflow.add_conditional_edges("answer_tool_node", self.routeToolCallResult, ["createAnswerAgent", END])
+
+
+        workflow.add_edge("answer_tool_node", "createAnswerAgent")
+
+
+
+        #workflow.add_edge("tool_node", "sql_agent")
+        #workflow.add_edge("sql_agent", "get_SQL_Texts")
 
         #workflow.add_edge("get_SQL_Texts", "checkContextRelevance")
 
         agent = workflow.compile()
-        messages = [HumanMessage(content="Gibts Messungen zum 505?")]
+        messages = [HumanMessage(content=self.prompt)]
         messages = agent.invoke({"messages": messages})
-        for m in messages["messages"]:
-            m.pretty_print()
+
 
 if __name__ == "__main__":
-    agent = Agent()
+    agent = Agent("Bestehen die 5xx den IP67 test?")
     agent.createAgent()
 
         
