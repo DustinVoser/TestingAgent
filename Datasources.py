@@ -16,7 +16,16 @@ from pathlib import Path
 from Functions.classLibrary import Document, Prompt
 import os
 import mammoth
-
+import importlib
+try:
+    _sa = importlib.import_module("sqlalchemy")
+    create_engine = _sa.create_engine
+    text = _sa.text
+except ModuleNotFoundError:  # SQLAlchemy not installed
+    create_engine = None
+    def text(x):
+        return x
+from urllib.parse import quote_plus
 
 class ELabJobsDB:
     """Handles SQL Server database connections."""
@@ -32,7 +41,7 @@ class ELabJobsDB:
         }
 
     def get_connection(self):
-        """Creates and returns a new database connection."""
+        """Creates and returns a new raw pyodbc connection (legacy use)."""
         conn_str = (
             f"DRIVER={self.config['driver']};"
             f"SERVER={self.config['server']};"
@@ -42,20 +51,47 @@ class ELabJobsDB:
         )
         return pyodbc.connect(conn_str)
 
+    def get_sqlalchemy_engine(self):
+        """Creates a SQLAlchemy engine for pandas.read_sql to avoid warnings.
+        Returns an engine or raises ImportError if SQLAlchemy is not available.
+        """
+        if create_engine is None:
+            raise ImportError("SQLAlchemy is not installed")
+        # Build ODBC connection string and URL-encode it for SQLAlchemy
+        odbc_parts = [
+            f"DRIVER={self.config['driver']}",
+            f"SERVER={self.config['server']}",
+            f"DATABASE={self.config['database']}",
+            f"UID={self.config['username']}",
+            f"PWD={self.config['password']}",
+            "TrustServerCertificate=yes",
+        ]
+        odbc_conn_str = ";".join(odbc_parts)
+        connect_url = f"mssql+pyodbc:///?odbc_connect={quote_plus(odbc_conn_str)}"
+        return create_engine(connect_url)
+
     def runQuery(self, prompt: str) -> pd.DataFrame:
         """
-        Runs a SQL query against the database.
+        Runs a SQL query against the database using SQLAlchemy engine.
         Returns a pandas DataFrame with the results.
         """
-        print(f"🟢 Executing query:\n{prompt}\n")
-
         try:
-            with self.get_connection() as conn:
-                df = pd.read_sql(prompt, conn)
-                print(f"✅ Query executed successfully: {len(df)} rows, {len(df.columns)} columns")
+            engine = self.get_sqlalchemy_engine()
+            with engine.begin() as conn:
+                df = pd.read_sql(text(prompt), conn)
                 return df
-
         except Exception as e:
+            # Fallback to legacy connection if SQLAlchemy path fails
+            try:
+                import warnings
+                with self.get_connection() as legacy_conn:
+                    with warnings.catch_warnings():
+                        # Suppress the pandas UserWarning about DBAPI2; we prefer SQLAlchemy but continue gracefully
+                        warnings.simplefilter("ignore", category=UserWarning)
+                        df = pd.read_sql(prompt, legacy_conn)
+                    return df
+            except Exception:
+                pass
             print(f"❌ SQL Error in runQuery: {e}")
             return pd.DataFrame([{"error": str(e)}])
 
@@ -385,5 +421,46 @@ class ChromaDB:
 
 
     def keywordsRetrieval(self, keywords: list[str], n_results: int = 2):
+        """Filter documents by provided keywords/product codes across multiple metadata fields.
+        Returns a pandas DataFrame with at most n_results rows.
+        """
         df = self.load_files()
-        return df[df["keywords"].astype(str).str.contains("505")]
+        try:
+            import re
+            import pandas as _pd  # local alias
+        except Exception:
+            return df.head(0)
+
+        if df is None or df.empty:
+            return df
+        if not keywords:
+            return df.head(0)
+
+        # Build a case-insensitive regex combining all keywords safely
+        pats = [re.escape(str(k)) for k in keywords if str(k).strip()]
+        if not pats:
+            return df.head(0)
+        regex = "|".join(pats)
+
+        # Candidate columns to match against
+        candidate_cols = [
+            "keywords",
+            "product_code",
+            "document_title",
+            "document_location",
+            "title",
+            "art_no",
+            "content",
+        ]
+        mask = _pd.Series(False, index=df.index)
+        for col in candidate_cols:
+            if col in df.columns:
+                try:
+                    mask = mask | df[col].astype(str).str.contains(regex, case=False, na=False)
+                except Exception:
+                    continue
+        result = df[mask]
+        if result.empty:
+            return result
+        # Return top n_results (no specific scoring available here)
+        return result.head(max(1, int(n_results)))

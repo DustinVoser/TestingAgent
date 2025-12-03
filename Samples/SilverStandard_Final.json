@@ -1,0 +1,2662 @@
+[
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wie hat die 560 beim IPX7-Test abgeschnitten?",
+        "context": "",
+        "answer": "Fail — 5 von 16 Prüflingen wiesen Wasser im Stecker auf; IPX7 nicht bestanden.",
+        "history": "",
+        "ref_Answer": "Fail — 5 von 16 Prüflingen wiesen Wasser im Stecker auf; IPX7 nicht bestanden.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            4
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Ergebnis der 560 beim Over-pressure strength Test (-40/25/125°C)?",
+        "context": "",
+        "answer": "Fail — Over-pressure strength nicht bestanden (Test bei -40°C, 25°C und 125°C).",
+        "history": "",
+        "ref_Answer": "Fail — Over-pressure strength nicht bestanden (Test bei -40°C, 25°C und 125°C).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            4
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Gibt es ein Helium-Leak Ergebnis für die 560?",
+        "context": "",
+        "answer": "Ja — 24 DUTs getestet; alle < 1.0×10⁻⁷ mbar·L/s (keine Lecks).",
+        "history": "",
+        "ref_Answer": "Ja — 24 DUTs getestet; alle < 1.0×10⁻⁷ mbar·L/s (keine Lecks).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            4
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wer ist der Creator für Qualification 450?",
+        "context": "",
+        "answer": "Thomas Arzner",
+        "history": "",
+        "ref_Answer": "Thomas Arzner",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            9
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde die 0.125 mm Elastosil‑Membran für den 699 50Pa Differenzdrucksensor qualifiziert?",
+        "context": "",
+        "answer": "Ja — IEC 61298‑2 Tests bestanden; 30.000 Stück als geeignet bewertet; ein Sensor lag außerhalb der Toleranz.",
+        "history": "",
+        "ref_Answer": "Ja — IEC 61298‑2 Tests bestanden; 30.000 Stück als geeignet bewertet; ein Sensor lag außerhalb der Toleranz.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            10
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Prüfbedingungen wurden bei der Kennlinie für die 699 Membran verwendet?",
+        "context": "",
+        "answer": "-10°C bis 85°C, voller Druckbereich, gemessen an 4 Punkten, geforderte Genauigkeit 1.5% FS.",
+        "history": "",
+        "ref_Answer": "-10°C bis 85°C, voller Druckbereich, gemessen an 4 Punkten, geforderte Genauigkeit 1.5% FS.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            10
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde ein Temperprozess für Elastosil‑Membranen wegen Driftproblemen durchgeführt oder empfohlen?",
+        "context": "",
+        "answer": "Es wurde entschieden, Membranen vor dem Einbau zu tempern wegen beobachteter Driftprobleme; es wird aber angemerkt, dass dies eventuell nicht notwendig ist.",
+        "history": "",
+        "ref_Answer": "Es wurde entschieden, Membranen vor dem Einbau zu tempern wegen beobachteter Driftprobleme; es wird aber angemerkt, dass dies eventuell nicht notwendig ist.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            10
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Feuchtemessung wurde im 450 durchgeführt?",
+        "context": "",
+        "answer": "Feuchtemessung (Norm 1): 10%RH bis 80%RH @25°C.",
+        "history": "",
+        "ref_Answer": "Feuchtemessung (Norm 1): 10%RH bis 80%RH @25°C.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            25
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Gibt es eine Feuchtekennlinie im 450?",
+        "context": "",
+        "answer": "Ja — Purpose 'Feuchtekennlinie' mit Feuchtemessung (Norm 1), 10%–80%RH @25°C.",
+        "history": "",
+        "ref_Answer": "Ja — Purpose 'Feuchtekennlinie' mit Feuchtemessung (Norm 1), 10%–80%RH @25°C.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            25
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde die Ascenta 5‑bar Zelle im Damp‑Heat Test (85°C/85% RH, 1000h, 10V) bestanden?",
+        "context": "",
+        "answer": "Teilweise: einige Ascenta‑Sensoren fielen aus; Huba 528 Specimens blieben nahezu unverändert.",
+        "history": "",
+        "ref_Answer": "Teilweise: einige Ascenta‑Sensoren fielen aus; Huba 528 Specimens blieben nahezu unverändert.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            26
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Was war das Ergebnis des Long‑term drift Tests (125°C, 90%FS, geplant 1000h) für die Ascenta‑Zellen?",
+        "context": "",
+        "answer": "Fail – Test wurde nach 800h abgebrochen, alle Prüflinge wurden durch defekte Temperaturkammer zerstört; keine finale Charakteristik bestimmt.",
+        "history": "",
+        "ref_Answer": "Fail – Test wurde nach 800h abgebrochen, alle Prüflinge wurden durch defekte Temperaturkammer zerstört; keine finale Charakteristik bestimmt.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            26
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wie viel drifteten die Ascenta‑Zellen nach Temperature‑Shock (-40°C/125°C, 300 Zyklen) im Vergleich zu Huba‑Zellen?",
+        "context": "",
+        "answer": "Ascenta driftete bis zu 0.4%FS, Huba etwa 0.1%FS; beide innerhalb des Ascenta‑Datasheet‑Limits von 0.5%FS.",
+        "history": "",
+        "ref_Answer": "Ascenta driftete bis zu 0.4%FS, Huba etwa 0.1%FS; beide innerhalb des Ascenta‑Datasheet‑Limits von 0.5%FS.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            26
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Gibt es einen Prüfbericht für 713 p0.2 TKA2928 und wo liegt die Datei?",
+        "context": "",
+        "answer": "Ja. Report: S:\\CH_Huba_Produkte\\713\\ProduktDoku\\Pruefungen\\ELabor\\2402_713_24T001_TKA2928_200mbar\\240222_713_p0.2_TKA2928.pdf",
+        "history": "",
+        "ref_Answer": "Ja. Report: S:\\CH_Huba_Produkte\\713\\ProduktDoku\\Pruefungen\\ELabor\\2402_713_24T001_TKA2928_200mbar\\240222_713_p0.2_TKA2928.pdf",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            27
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche andere Produktnummer nutzt dieselbe Membran wie die 402?",
+        "context": "",
+        "answer": "699.",
+        "history": "",
+        "ref_Answer": "699.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            28
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wie hoch war die Temperaturhysterese der 508 mit Wang-Zellen?",
+        "context": "",
+        "answer": "Über 2% FS; zusätzlicher Drift etwa 1% FS; Testresultat: Fail.",
+        "history": "",
+        "ref_Answer": "Über 2% FS; zusätzlicher Drift etwa 1% FS; Testresultat: Fail.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            29
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Auswirkungen hatte das Entfernen von SilGel bei 508 OULD?",
+        "context": "",
+        "answer": "Temperaturhysterese wurde auf Huba-ähnliches Niveau reduziert; ein Sensor zeigte TCO 0.018% FS/K (>0.015% FS/K).",
+        "history": "",
+        "ref_Answer": "Temperaturhysterese wurde auf Huba-ähnliches Niveau reduziert; ein Sensor zeigte TCO 0.018% FS/K (>0.015% FS/K).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            29
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Temperaturhysterese zeigte die 508 mit reworked HXL-Cell?",
+        "context": "",
+        "answer": "Ungefähr 0.73% FS (Huba: 0.5% FS); Tco bis 0.024% FS/K.",
+        "history": "",
+        "ref_Answer": "Ungefähr 0.73% FS (Huba: 0.5% FS); Tco bis 0.024% FS/K.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            29
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Gibt es ein Ergebnis der IEC 61298-2 (Characteristic line) Prüfung für die 560?",
+        "context": "",
+        "answer": "Ja — Summary ID 25.0: Pass.",
+        "history": "",
+        "ref_Answer": "Ja — Summary ID 25.0: Pass.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            30
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wo ist der Prüfbericht zur 560 Nachmessung abgelegt?",
+        "context": "",
+        "answer": "S:\\CH_Huba_Produkte\\560\\ProduktDoku\\Pruefungen\\ELabor\\2403_560_p45_p90_p150_Nachmessung\\240319_560_p150_p90_p45_Nachmessung.pdf",
+        "history": "",
+        "ref_Answer": "S:\\CH_Huba_Produkte\\560\\ProduktDoku\\Pruefungen\\ELabor\\2403_560_p45_p90_p150_Nachmessung\\240319_560_p150_p90_p45_Nachmessung.pdf",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            30
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde die Langzeitauslagerung mit Wasserstoff bei 85°C für Typ 555N wiederholt?",
+        "context": "",
+        "answer": "Ja — die Langzeitauslagerung mit Wasserstoff bei 85°C wird wiederholt mit einer grösseren Anzahl Prüflingen.",
+        "history": "",
+        "ref_Answer": "Ja — die Langzeitauslagerung mit Wasserstoff bei 85°C wird wiederholt mit einer grösseren Anzahl Prüflingen.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            31
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Norm wird im Performance Test der Wasserstoff Driftuntersuchung angewendet?",
+        "context": "",
+        "answer": "IEC 61298-2 (Characteristic line, Norm 2).",
+        "history": "",
+        "ref_Answer": "IEC 61298-2 (Characteristic line, Norm 2).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            31
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Temperaturzyklen sind für die IEC 61298-2 Prüfung bei der Waferfreigabe vorgesehen?",
+        "context": "",
+        "answer": "1. Zyklus: -20…70°C; 2. + 3. Zyklus: -40…85°C.",
+        "history": "",
+        "ref_Answer": "1. Zyklus: -20…70°C; 2. + 3. Zyklus: -40…85°C.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            32
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Temperaturzyklen sind im IEC 61298-2 Performance Test der Waferfreigabe 141706-09 vorgesehen?",
+        "context": "",
+        "answer": "1. Zyklus: -20...70°C; 2. und 3. Zyklus: -40...85°C.",
+        "history": "",
+        "ref_Answer": "1. Zyklus: -20...70°C; 2. und 3. Zyklus: -40...85°C.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            33
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welcher Norm entspricht der Performance Test in der Waferfreigabe 141706-09?",
+        "context": "",
+        "answer": "IEC 61298-2 (Characteristic line, Norm 2).",
+        "history": "",
+        "ref_Answer": "IEC 61298-2 (Characteristic line, Norm 2).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            33
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Prüfung wurde für Produkt 690F.99001 durchgeführt?",
+        "context": "",
+        "answer": "IEC 61298-2: Charakteristische Kennlinie, Hysterese und Reproduzierbarkeit.",
+        "history": "",
+        "ref_Answer": "IEC 61298-2: Charakteristische Kennlinie, Hysterese und Reproduzierbarkeit.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            37
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wer ist der Lieferant der keramischen Verstärkungsplatte für 690F?",
+        "context": "",
+        "answer": "BSQ",
+        "history": "",
+        "ref_Answer": "BSQ",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            37
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welcher Druck- und Temperaturbereich sowie die Genauigkeit sind für die Prüfung des 690F angegeben?",
+        "context": "",
+        "answer": "Druck -900...+2000 mbar; Temperatur +5...+95°C; Genauigkeit ±0.68%FS",
+        "history": "",
+        "ref_Answer": "Druck -900...+2000 mbar; Temperatur +5...+95°C; Genauigkeit ±0.68%FS",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            37
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Prüfung wurde am 560 durchgeführt?",
+        "context": "",
+        "answer": "Kennlinienmessung nach IEC 61298-2 (Characteristic line).",
+        "history": "",
+        "ref_Answer": "Kennlinienmessung nach IEC 61298-2 (Characteristic line).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            39
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Hat der 560 (neuer Print mit DAC-Abgleich) den Test bestanden?",
+        "context": "",
+        "answer": "Ja — Summary ID 26: Pass – Testresult.",
+        "history": "",
+        "ref_Answer": "Ja — Summary ID 26: Pass – Testresult.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            39
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wo ist der Prüfbericht zur 560 Kennlinienmessung abgelegt?",
+        "context": "",
+        "answer": "S:\\CH_Huba_Produkte\\560\\ProduktDoku\\Pruefungen\\ELabor\\2404_neuer_Strom_Print_mit DAC_abgl\\240410_560_p10_strom_Print.neu.DAC.abgl.pdf",
+        "history": "",
+        "ref_Answer": "S:\\CH_Huba_Produkte\\560\\ProduktDoku\\Pruefungen\\ELabor\\2404_neuer_Strom_Print_mit DAC_abgl\\240410_560_p10_strom_Print.neu.DAC.abgl.pdf",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            39
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurden bei der 560 nach Überdruck Ausreißer von 2–4%FS beobachtet?",
+        "context": "",
+        "answer": "Ja – vereinzelte Sensoren zeigten 2–4%FS Ausreißer nach Überdruck, unabhängig von Konditionierdruck oder Zellencharge.",
+        "history": "",
+        "ref_Answer": "Ja – vereinzelte Sensoren zeigten 2–4%FS Ausreißer nach Überdruck, unabhängig von Konditionierdruck oder Zellencharge.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            40
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Temperaturbereiche wurden bei der TCO-Messung des Wang HB18G005H geprüft?",
+        "context": "",
+        "answer": "-40°C bis 125°C (Messung über Temperatur, ohne Druck).",
+        "history": "",
+        "ref_Answer": "-40°C bis 125°C (Messung über Temperatur, ohne Druck).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            41
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wie schnitt die Wang HB18G005H im Radialkräfte-Vergleich gegenüber der Huba 528 ab?",
+        "context": "",
+        "answer": "Wang performte schlechter als die Huba 528 und kann grössere Klemmoffset verursachen.",
+        "history": "",
+        "ref_Answer": "Wang performte schlechter als die Huba 528 und kann grössere Klemmoffset verursachen.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            41
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wie wurde die Radialkraftprüfung durchgeführt (aufgewendete Kraft und Prüfaufbau)?",
+        "context": "",
+        "answer": "2.4 kg Kraft über einen Stahlball auf den Zellmantel; Zelle in einem Stahlprisma gehalten.",
+        "history": "",
+        "ref_Answer": "2.4 kg Kraft über einen Stahlball auf den Zellmantel; Zelle in einem Stahlprisma gehalten.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            41
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde bei der Investigation 690 BB eine 2‑bar Ascenta Messzelle eingesetzt?",
+        "context": "",
+        "answer": "Ja — Purpose of Use: 2 bar Ascenta measuringcell.",
+        "history": "",
+        "ref_Answer": "Ja — Purpose of Use: 2 bar Ascenta measuringcell.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            42
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Performance‑Tests sind im 690 BB angegeben?",
+        "context": "",
+        "answer": "IEC 61298-2 Characteristic line und IEC 61298-2 Characteristic line TCO.",
+        "history": "",
+        "ref_Answer": "IEC 61298-2 Characteristic line und IEC 61298-2 Characteristic line TCO.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            42
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Dient die IEC 61298-2 Characteristic line TCO im 690 BB zur Bestimmung der Temperaturcharakteristik?",
+        "context": "",
+        "answer": "Ja — Characteristic line TCO: ohne Druck zur Bestimmung der Temperaturcharakteristik.",
+        "history": "",
+        "ref_Answer": "Ja — Characteristic line TCO: ohne Druck zur Bestimmung der Temperaturcharakteristik.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            42
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde für Produkt 560 ein IPX7-Test durchgeführt?",
+        "context": "",
+        "answer": "Ja — EN 60529 IPX7 (Immersion 1 m, 30 min); Ergebnis: Pass.",
+        "history": "",
+        "ref_Answer": "Ja — EN 60529 IPX7 (Immersion 1 m, 30 min); Ergebnis: Pass.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            43
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Normen/Leistungsprüfungen sind in Instigation 24D011 (560) genannt?",
+        "context": "",
+        "answer": "IEC 61298-2 (Characteristic line) und EN 60529 IPX7.",
+        "history": "",
+        "ref_Answer": "IEC 61298-2 (Characteristic line) und EN 60529 IPX7.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            43
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wo ist der Prüfbericht für „560 Define SilGel hardness“ abgelegt?",
+        "context": "",
+        "answer": "S:\\\\CH_Huba_Produkte\\\\560\\\\ProduktDoku\\\\Pruefungen\\\\ELabor\\\\2406_24D011_Silgel_Härte_bestimmen\\\\240603_560_Define_SilGel_hardness.pdf",
+        "history": "",
+        "ref_Answer": "S:\\\\CH_Huba_Produkte\\\\560\\\\ProduktDoku\\\\Pruefungen\\\\ELabor\\\\2406_24D011_Silgel_Härte_bestimmen\\\\240603_560_Define_SilGel_hardness.pdf",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            43
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde ein Helium-Lecktest an den 713 Absolut-Tauchsonden durchgeführt?",
+        "context": "",
+        "answer": "Ja — Analysis 5: Helium-Lecktest nach Anbohren der Keramik; bei keinem Prüfmuster wurden Lecks nachgewiesen.",
+        "history": "",
+        "ref_Answer": "Ja — Analysis 5: Helium-Lecktest nach Anbohren der Keramik; bei keinem Prüfmuster wurden Lecks nachgewiesen.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            45
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde die 505 (10bar, 10-70% ratiometric) nach IEC 61298-2 auf Kennlinie geprüft und wie war das Ergebnis?",
+        "context": "",
+        "answer": "Ja — IEC 61298-2 Kennlinienprüfung durchgeführt; Summary ID 80: Pass; alle Sensoren innerhalb Huba-Datenblatt-Toleranzen.",
+        "history": "",
+        "ref_Answer": "Ja — IEC 61298-2 Kennlinienprüfung durchgeführt; Summary ID 80: Pass; alle Sensoren innerhalb Huba-Datenblatt-Toleranzen.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            46
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Toleranzen für tco und tcg wurden bei der 505 Kennlinienprüfung angegeben?",
+        "context": "",
+        "answer": "tco: max 1 %FS/10K, typ. 0.6 %FS/10K; tcg: typ. 0.15 %FS/10K.",
+        "history": "",
+        "ref_Answer": "tco: max 1 %FS/10K, typ. 0.6 %FS/10K; tcg: typ. 0.15 %FS/10K.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            46
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Gibt es einen Elab-Order bzw. Report zur 505 10bar 10-70% ratiometric Kennlinienmessung (EL0122)?",
+        "context": "",
+        "answer": "Ja — Elab-Order EL0122; Report: s:\\CH_Huba_Produkte\\505\\ProduktDoku\\Pruefungen\\ELabor\\2406_EL0122_Kennlinie_p10_10_70Ratiometer\\Report.pdf.",
+        "history": "",
+        "ref_Answer": "Ja — Elab-Order EL0122; Report: s:\\CH_Huba_Produkte\\505\\ProduktDoku\\Pruefungen\\ELabor\\2406_EL0122_Kennlinie_p10_10_70Ratiometer\\Report.pdf.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            46
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Prüfung wurde für die SANHUA YCQB3 in der Wettbewerbsanalyse durchgeführt?",
+        "context": "",
+        "answer": "Characteristice Line (full range) gemäß IEC 61298-2.",
+        "history": "",
+        "ref_Answer": "Characteristice Line (full range) gemäß IEC 61298-2.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            48
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Genauigkeit und Temperaturspanne ist im Performance Test zu SANHUA YCQB3 angegeben?",
+        "context": "",
+        "answer": "+/- 0.8%FS, -40°C bis 120°C.",
+        "history": "",
+        "ref_Answer": "+/- 0.8%FS, -40°C bis 120°C.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            48
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Als Konkurrent zu welchem Produkt ist SANHUA YCQB3 gelistet?",
+        "context": "",
+        "answer": "Konkurrent zu Produkt 560.",
+        "history": "",
+        "ref_Answer": "Konkurrent zu Produkt 560.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            48
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wie ist das IPX7-Ergebnis für die 560?",
+        "context": "",
+        "answer": "Pass – IPX7 (Eintauchen 1 m, 30 min), kein Wassereintritt ins Gehäuse.",
+        "history": "",
+        "ref_Answer": "Pass – IPX7 (Eintauchen 1 m, 30 min), kein Wassereintritt ins Gehäuse.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            49
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde beim 560 ein Langzeit-Temperaturtest bei 150 °C gemacht und wie groß war der Drift?",
+        "context": "",
+        "answer": "Ja – 620 h bei 150 °C (~90% FS); gemessener Drift ≈1.4% FS (Nullpunkt ≈1.2% FS); Drift wurde dem Drucksensor zugeschrieben.",
+        "history": "",
+        "ref_Answer": "Ja – 620 h bei 150 °C (~90% FS); gemessener Drift ≈1.4% FS (Nullpunkt ≈1.2% FS); Drift wurde dem Drucksensor zugeschrieben.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 3,
+        "instigationids": [
+            49
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wie verhalten sich die 560er Messzellen im Damp-Heat-Sensitivity-Test?",
+        "context": "",
+        "answer": "Die fünf Messzellen Typ 560 zeigten keine feuchtebedingten Auffälligkeiten.",
+        "history": "",
+        "ref_Answer": "Die fünf Messzellen Typ 560 zeigten keine feuchtebedingten Auffälligkeiten.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            50
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde eine IEC 61298-2 Charakteristik‑Linienprüfung an der 1‑bar Keramikzelle durchgeführt und wie oft?",
+        "context": "",
+        "answer": "Ja — IEC 61298-2 Characteristic line cycling an der 1‑bar Keramikzelle, 20 Wiederholungen bei 25 °C.",
+        "history": "",
+        "ref_Answer": "Ja — IEC 61298-2 Characteristic line cycling an der 1‑bar Keramikzelle, 20 Wiederholungen bei 25 °C.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            50
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Termination schnitt bzgl. TCO bei den 402-Sensoren besser: Au-termination oder AgPd?",
+        "context": "",
+        "answer": "AgPd (silver‑palladium) Pads schnitten besser; Au‑Terminations zeigten schlechtere TCO‑Werte.",
+        "history": "",
+        "ref_Answer": "AgPd (silver‑palladium) Pads schnitten besser; Au‑Terminations zeigten schlechtere TCO‑Werte.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            56
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Befunde ergab die Kennlinienmessung der 711 Tauchsonde?",
+        "context": "",
+        "answer": "Fail – grosse Abweichung in der Kennlinie und Einschaltdrift von ~0.5–1%FS.",
+        "history": "",
+        "ref_Answer": "Fail – grosse Abweichung in der Kennlinie und Einschaltdrift von ~0.5–1%FS.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            57
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wie verhielt sich die 711 Tauchsonde bei der NP‑Messung mit und ohne Erdungsleitung?",
+        "context": "",
+        "answer": "Die Erdung verursachte einen Signalanstieg von etwa 11%FS.",
+        "history": "",
+        "ref_Answer": "Die Erdung verursachte einen Signalanstieg von etwa 11%FS.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            57
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Worauf deuten die Untersuchungen der defekten 711 Tauchsonde hin?",
+        "context": "",
+        "answer": "Auf eine defekte Elektronik; Weiteruntersuchung in der Fachabteilung Elektronik empfohlen.",
+        "history": "",
+        "ref_Answer": "Auf eine defekte Elektronik; Weiteruntersuchung in der Fachabteilung Elektronik empfohlen.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            57
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Zeigt die Huba‑Keramik im Ascenta‑Layout Temperaturhysterese?",
+        "context": "",
+        "answer": "Nein – Huba‑Keramik im Ascenta‑Layout zeigte keine Hysterese.",
+        "history": "",
+        "ref_Answer": "Nein – Huba‑Keramik im Ascenta‑Layout zeigte keine Hysterese.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            58
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wie groß war die Temperaturhysterese der Ascenta‑Zellen?",
+        "context": "",
+        "answer": "Ca. 0.7%FS.",
+        "history": "",
+        "ref_Answer": "Ca. 0.7%FS.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            58
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Zellen wurden im 511 Dummy Setup bei den Temperaturzyklus‑Messungen verglichen?",
+        "context": "",
+        "answer": "Ascenta‑Zellen, 528‑Zellen und Huba‑Keramik im Ascenta‑Layout.",
+        "history": "",
+        "ref_Answer": "Ascenta‑Zellen, 528‑Zellen und Huba‑Keramik im Ascenta‑Layout.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            58
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wie performen OULD Messzellen bei Radial Forces im Vergleich zur Huba 528?",
+        "context": "",
+        "answer": "Leicht schlechter als Huba 528; OULD sind 5 bar und Effekte durch Klemmversätze steigen um 20% bei Betrachtung auf 4 bar.",
+        "history": "",
+        "ref_Answer": "Leicht schlechter als Huba 528; OULD sind 5 bar und Effekte durch Klemmversätze steigen um 20% bei Betrachtung auf 4 bar.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            59
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche TCO und Temperatur‑Hysterese wurden für die OULD Messzelle gemessen?",
+        "context": "",
+        "answer": "Max. TCO 0.014% FS/K; mittlere Temperaturhysterese 0.17% FS.",
+        "history": "",
+        "ref_Answer": "Max. TCO 0.014% FS/K; mittlere Temperaturhysterese 0.17% FS.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            59
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde die OULD Zelle in einer 511 Dummy‑Gehäuse zur Sensitivitätsbestimmung montiert und wie hoch war die mittlere Sensitivität?",
+        "context": "",
+        "answer": "Ja; mittlere Sensitivität −3.18 mV/V.",
+        "history": "",
+        "ref_Answer": "Ja; mittlere Sensitivität −3.18 mV/V.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            59
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde der Free Fall Test nach IEC 60068-2-31 bei 1 m auf Beton mit 3 Zyklen durchgeführt?",
+        "context": "",
+        "answer": "Ja — Free Fall test IEC 60068-2-31, Test Level: 1 m, concrete, 3 cycles.",
+        "history": "",
+        "ref_Answer": "Ja — Free Fall test IEC 60068-2-31, Test Level: 1 m, concrete, 3 cycles.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            60
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Gibt es Korrosions- oder Dichtungsbefunde am O‑Ring der 711?",
+        "context": "",
+        "answer": "Ja — Korrosionsspuren am Gehäuse nahe der O‑Ring‑Dichtung; wahrscheinlich Leckage an der Tauchsonde.",
+        "history": "",
+        "ref_Answer": "Ja — Korrosionsspuren am Gehäuse nahe der O‑Ring‑Dichtung; wahrscheinlich Leckage an der Tauchsonde.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            61
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde für die MSG Transmitter Series 1 ein IEC 61298-2 Charakteristiklinien-Test durchgeführt?",
+        "context": "",
+        "answer": "Ja — IEC 61298-2 Characteristic line (Norm 2.0) ist Bestandteil der Tests.",
+        "history": "",
+        "ref_Answer": "Ja — IEC 61298-2 Characteristic line (Norm 2.0) ist Bestandteil der Tests.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            62
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Gibt es eine Druckkonditionierung der ersten Muster mit 560er Print und mit welchem Belastungsniveau?",
+        "context": "",
+        "answer": "Ja — Druckkonditionierung durchgeführt mit 320% FS.",
+        "history": "",
+        "ref_Answer": "Ja — Druckkonditionierung durchgeführt mit 320% FS.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            62
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wie groß war der Drift nach Überdruckprüfung (300% FS) bei den 520 Stahlzellen?",
+        "context": "",
+        "answer": "+2,5% FS für beide Stahlvarianten.",
+        "history": "",
+        "ref_Answer": "+2,5% FS für beide Stahlvarianten.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            63
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Über welchen Temperatur- und Druckbereich wurde die IEC 61298-2 Charakteristiklinie der 520 14mm Stahlzellen geprüft?",
+        "context": "",
+        "answer": "Temperatur: −25°C bis 105°C; Druck: 0–100% des Messbereichs.",
+        "history": "",
+        "ref_Answer": "Temperatur: −25°C bis 105°C; Druck: 0–100% des Messbereichs.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            63
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Lotdrähte wurden bei den 520-Transmittern verglichen?",
+        "context": "",
+        "answer": "Almit LFM-48 und Interflux Flexol 903.",
+        "history": "",
+        "ref_Answer": "Almit LFM-48 und Interflux Flexol 903.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            71
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde ein Tempering-/Drift-Test an den 520 durchgeführt und was war das Ergebnis?",
+        "context": "",
+        "answer": "Ja — Tempering and drift (H_tempering_drift) wurde durchgeführt; Ergebnis: kein Unterschied zwischen den Lotdrähten (Pass).",
+        "history": "",
+        "ref_Answer": "Ja — Tempering and drift (H_tempering_drift) wurde durchgeführt; Ergebnis: kein Unterschied zwischen den Lotdrähten (Pass).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            71
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Gibt es eine IEC 60068-2-78 Damp Heat Prüfung im Almit LFM-48 Auftrag?",
+        "context": "",
+        "answer": "Ja — IEC 60068-2-78 Damp Heat ist als Performance Test aufgeführt (WorkPackage 110); Befunde noch nicht dokumentiert.",
+        "history": "",
+        "ref_Answer": "Ja — IEC 60068-2-78 Damp Heat ist als Performance Test aufgeführt (WorkPackage 110); Befunde noch nicht dokumentiert.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            71
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Druckhysterese wurde bei der 511 (400/600 bar) festgestellt?",
+        "context": "",
+        "answer": "Beide Sensoren zeigten eine Druckhysterese von 1 % FS.",
+        "history": "",
+        "ref_Answer": "Beide Sensoren zeigten eine Druckhysterese von 1 % FS.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            74
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Bei welchen Testpegeln wurde die Druckkurve der 511 gemessen?",
+        "context": "",
+        "answer": "0 %, 25 %, 50 %, 75 % und 100 % FS.",
+        "history": "",
+        "ref_Answer": "0 %, 25 %, 50 %, 75 % und 100 % FS.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            74
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Womit und unter welchen Temperaturbedingungen wurde die Hysterese der 511 geprüft?",
+        "context": "",
+        "answer": "Mit einem kalibrierten Öl-Druckgenerator und Gewichten; bei Umgebungstemperatur.",
+        "history": "",
+        "ref_Answer": "Mit einem kalibrierten Öl-Druckgenerator und Gewichten; bei Umgebungstemperatur.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            74
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Tests wurden an den 450-Produktionsmustern durchgeführt?",
+        "context": "",
+        "answer": "Characteristic Line Temperature (Norm 1): -20°C / 85°C bei 0/50/100% Druck; und IEC 60068-2-78 Damp Heat: +40°C, 80% rH, 24 h.",
+        "history": "",
+        "ref_Answer": "Characteristic Line Temperature (Norm 1): -20°C / 85°C bei 0/50/100% Druck; und IEC 60068-2-78 Damp Heat: +40°C, 80% rH, 24 h.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            75
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde die IEC 60068-2-78 (Damp Heat) für die 450 bestanden?",
+        "context": "",
+        "answer": "Ja — keine signifikanten Abweichungen; Gesamtergebnis: Pass.",
+        "history": "",
+        "ref_Answer": "Ja — keine signifikanten Abweichungen; Gesamtergebnis: Pass.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            75
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wie hoch war die gemessene TCO (Tco) der HXL/511 ohne Gehäuse?",
+        "context": "",
+        "answer": "Bis zu 0.036% FS/°C (deutlich über den Datenblattwerten von 0.01% FS/K bzw. der Spezifikation 0.02% FS/K).",
+        "history": "",
+        "ref_Answer": "Bis zu 0.036% FS/°C (deutlich über den Datenblattwerten von 0.01% FS/K bzw. der Spezifikation 0.02% FS/K).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            77
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Sensitivität wurde für die HXL-Zelle gemessen?",
+        "context": "",
+        "answer": "Durchschnittlich 2.75 mV/V (gemessen bei 0%FS und 100%FS, ambient).",
+        "history": "",
+        "ref_Answer": "Durchschnittlich 2.75 mV/V (gemessen bei 0%FS und 100%FS, ambient).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            77
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Was wurde beim 515 bezüglich O-Ring-Kompression untersucht?",
+        "context": "",
+        "answer": "Ob eine Erhöhung der O‑Ring‑Kompression die Leckrate für Hochdruckanwendungen reduziert.",
+        "history": "",
+        "ref_Answer": "Ob eine Erhöhung der O‑Ring‑Kompression die Leckrate für Hochdruckanwendungen reduziert.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            78
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde für den 515 ein Characteristic‑Line Test nach IEC 61298-2 durchgeführt?",
+        "context": "",
+        "answer": "Ja — ein Performance Test IEC 61298-2 zur Bestimmung der Kennlinie wurde vorgesehen.",
+        "history": "",
+        "ref_Answer": "Ja — ein Performance Test IEC 61298-2 zur Bestimmung der Kennlinie wurde vorgesehen.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            78
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Messgrößen liefert der IEC 61298-2 Characteristic line Test beim 515?",
+        "context": "",
+        "answer": "Accuracy, Temperaturkoeffizient des Nullpunkts (Tco), des Endpunkts (Tcg), Hysterese und Reproduzierbarkeit.",
+        "history": "",
+        "ref_Answer": "Accuracy, Temperaturkoeffizient des Nullpunkts (Tco), des Endpunkts (Tcg), Hysterese und Reproduzierbarkeit.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            78
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde bei der 555 eine 10‑bar‑Zelle auf 0…3 bar abgeglichen?",
+        "context": "",
+        "answer": "Ja. Prüflinge mit nominaler 10‑bar‑Zelle wurden auf den Druckbereich 0…3 bar abgeglichen.",
+        "history": "",
+        "ref_Answer": "Ja. Prüflinge mit nominaler 10‑bar‑Zelle wurden auf den Druckbereich 0…3 bar abgeglichen.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            80
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Temperaturpunkte wurden in der IEC 61298‑2 Kennlinienprüfung der 555 geprüft?",
+        "context": "",
+        "answer": "−40°C, 0°C, 25°C, 55°C und 85°C.",
+        "history": "",
+        "ref_Answer": "−40°C, 0°C, 25°C, 55°C und 85°C.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            80
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Drift zeigte das Tempern (Norm 19.0) bei MSG 560p18?",
+        "context": "",
+        "answer": "+4% FS bis +12% FS; geringste Drift bei Startwinkeln 150° und 330°.",
+        "history": "",
+        "ref_Answer": "+4% FS bis +12% FS; geringste Drift bei Startwinkeln 150° und 330°.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            81
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Drift ergab das Pressure Conditioning (Norm 18.0) für MSG 10mmP50?",
+        "context": "",
+        "answer": "0.1% FS bis 0.4% FS (besser als Standard 560: 0.7–1.2% FS).",
+        "history": "",
+        "ref_Answer": "0.1% FS bis 0.4% FS (besser als Standard 560: 0.7–1.2% FS).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            81
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wie groß war der Drift nach Thermal Shock (IEC 60068-2-14) bei MSG 560p18 für schwimmende vs. innenliegende Chips?",
+        "context": "",
+        "answer": "Beide zeigten denselben Drift von 2% FS bis 3% FS.",
+        "history": "",
+        "ref_Answer": "Beide zeigten denselben Drift von 2% FS bis 3% FS.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            81
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wie stark beeinflusst Semicosil die Temperaturhysterese in EL0134 (528)?",
+        "context": "",
+        "answer": "Mit Semicosil ≈0.1% FSO; ohne Semicosil ≈0.4% FSO.",
+        "history": "",
+        "ref_Answer": "Mit Semicosil ≈0.1% FSO; ohne Semicosil ≈0.4% FSO.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            82
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Ändert Semicosil den Temperaturkoeffizienten der Nullstelle (TCO) im EL0134/528?",
+        "context": "",
+        "answer": "Nein — der TCO ist für beide Varianten ungefähr gleich.",
+        "history": "",
+        "ref_Answer": "Nein — der TCO ist für beide Varianten ungefähr gleich.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            82
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Zeigt der 505 nach dem Einschalten einen signifikanten Drift?",
+        "context": "",
+        "answer": "Ja — beide vom Kunden zurückgesandten 505-Exemplare zeigten nach dem Einschalten signifikanten Drift; Referenzsensoren taten dies nicht; Drift ist druckunabhängig und der Offset verschwindet nach Abstecken.",
+        "history": "",
+        "ref_Answer": "Ja — beide vom Kunden zurückgesandten 505-Exemplare zeigten nach dem Einschalten signifikanten Drift; Referenzsensoren taten dies nicht; Drift ist druckunabhängig und der Offset verschwindet nach Abstecken.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            83
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde der Widerstand R5 als Ursache für das temperaturabhängige Verhalten der 505-Sensoren gefunden?",
+        "context": "",
+        "answer": "Ja — R5 zeigte abnehmenden Widerstand bei steigender Temperatur, was auf ein kurzschlussähnliches Verhalten hinweist.",
+        "history": "",
+        "ref_Answer": "Ja — R5 zeigte abnehmenden Widerstand bei steigender Temperatur, was auf ein kurzschlussähnliches Verhalten hinweist.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            83
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Gibt es einen PL5 vs PL3 Vergleichstest hinsichtlich TCO für die 505?",
+        "context": "",
+        "answer": "Ja — es wurden zwei Sätze Sensoren (PL5 vs PL3) gefertigt, um die TCO über Temperatur zu vergleichen; Annahme: PL5 hat höheren TCO.",
+        "history": "",
+        "ref_Answer": "Ja — es wurden zwei Sätze Sensoren (PL5 vs PL3) gefertigt, um die TCO über Temperatur zu vergleichen; Annahme: PL5 hat höheren TCO.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            83
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde das Modell 550.99018 nach IEC 61298-2 bei 25/60/80°C geprüft?",
+        "context": "",
+        "answer": "Ja — Prüfung nach IEC 61298‑2 bei 25, 60 und 80°C durchgeführt; Ergebnis: Pass, alle Sensoren innerhalb der Toleranzen (Charakteristik, Tco, Tcg, Hysterese, Reproduzierbarkeit).",
+        "history": "",
+        "ref_Answer": "Ja — Prüfung nach IEC 61298‑2 bei 25, 60 und 80°C durchgeführt; Ergebnis: Pass, alle Sensoren innerhalb der Toleranzen (Charakteristik, Tco, Tcg, Hysterese, Reproduzierbarkeit).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            84
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde Loga als Zweitlieferant für die 560-Messzelle bei den Pressure Cycles p150 freigegeben?",
+        "context": "",
+        "answer": "Ja — Ergebnis: Pass; keine Unterschiede zu Weiss nach >3 Mio Zyklen bei 150 bar.",
+        "history": "",
+        "ref_Answer": "Ja — Ergebnis: Pass; keine Unterschiede zu Weiss nach >3 Mio Zyklen bei 150 bar.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            85
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Norm und Zyklenanzahl wurden für die Pressure Cycles p150 der 560 verwendet?",
+        "context": "",
+        "answer": "Norm EN 60770-1; Testlevel: >3 Millionen Zyklen bei 150 bar.",
+        "history": "",
+        "ref_Answer": "Norm EN 60770-1; Testlevel: >3 Millionen Zyklen bei 150 bar.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            85
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde beim 560-Validationstest auch die IEC 61298-2 (Charakteristiklinie) durchgeführt und in welchem Temperaturbereich?",
+        "context": "",
+        "answer": "Ja — IEC 61298-2 getestet im Bereich −40°C bis 115°C (Messgrößen: Genauigkeit, Tco, Tcg, Hysterese, Reproduzierbarkeit).",
+        "history": "",
+        "ref_Answer": "Ja — IEC 61298-2 getestet im Bereich −40°C bis 115°C (Messgrößen: Genauigkeit, Tco, Tcg, Hysterese, Reproduzierbarkeit).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            85
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Worum handelt es sich bei RA08275 450 Bondraht?",
+        "context": "",
+        "answer": "Instigation 24D027 – Untersuchung zu 450 Bondraht.",
+        "history": "",
+        "ref_Answer": "Instigation 24D027 – Untersuchung zu 450 Bondraht.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            86
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde die IEC 61298-2 Charakteristiklinienprüfung an den Huba 520-Geräten durchgeführt und bestanden?",
+        "context": "",
+        "answer": "Ja — IEC 61298-2 Test an Huba 520 durchgeführt; Ergebnis: Pass (alle Anforderungen erfüllt).",
+        "history": "",
+        "ref_Answer": "Ja — IEC 61298-2 Test an Huba 520 durchgeführt; Ergebnis: Pass (alle Anforderungen erfüllt).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            87
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Temperaturspanne wurde im TES0007 (520) Charakteristiklinientest geprüft?",
+        "context": "",
+        "answer": "-30 bis 85 °C.",
+        "history": "",
+        "ref_Answer": "-30 bis 85 °C.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            87
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Genauigkeitsanforderungen galten für die 520 Huba-Geräte (FSO und Temperaturkoeffizienten)?",
+        "context": "",
+        "answer": "±0.3 % FSO bei 25 °C; ±0.2 % FSO pro 10 K.",
+        "history": "",
+        "ref_Answer": "±0.3 % FSO bei 25 °C; ±0.2 % FSO pro 10 K.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            87
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde die 550 nach IEC 61298-2 (Characteristic line) getestet?",
+        "context": "",
+        "answer": "Ja — Test nach IEC 61298-2 (Characteristic line) wurde durchgeführt.",
+        "history": "",
+        "ref_Answer": "Ja — Test nach IEC 61298-2 (Characteristic line) wurde durchgeführt.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            88
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Testbedingungen wurden beim 555 am Autoclave-Prozessanschluss geprüft?",
+        "context": "",
+        "answer": "Tightening-torque Test an Autoclave 7/16-20UNF mit 20 Nm; drei neue Geometrien wurden getestet.",
+        "history": "",
+        "ref_Answer": "Tightening-torque Test an Autoclave 7/16-20UNF mit 20 Nm; drei neue Geometrien wurden getestet.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            90
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Nullpunktverschiebung zeigte 'No Strips' beim 555 bei 20 Nm?",
+        "context": "",
+        "answer": "Kalibrierter Nullpunkt relativ niedrig mit Schwankungen bis −0.5% FSO; bei 20 Nm Drift positiv ca. +0.4% bis +0.5% FSO; vor/nach Montage kaum Verschiebung.",
+        "history": "",
+        "ref_Answer": "Kalibrierter Nullpunkt relativ niedrig mit Schwankungen bis −0.5% FSO; bei 20 Nm Drift positiv ca. +0.4% bis +0.5% FSO; vor/nach Montage kaum Verschiebung.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            90
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Was wurde bei 711 untersucht?",
+        "context": "",
+        "answer": "Leaky immersion probes in seawater.",
+        "history": "",
+        "ref_Answer": "Leaky immersion probes in seawater.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            92
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Silbersorten wurden im Analog Batch 3 verwendet?",
+        "context": "",
+        "answer": "9695G und 9633G.",
+        "history": "",
+        "ref_Answer": "9695G und 9633G.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            93
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Widerstanden 5XX mit CN‑Zelle Überdrücke bis 400 bar?",
+        "context": "",
+        "answer": "Ja — alle getesteten Sensoren hielten Überdrücke bis >400 bar ohne gefährliche mechanische Schäden; 120 bar hatte keinen Effekt auf das Signal.",
+        "history": "",
+        "ref_Answer": "Ja — alle getesteten Sensoren hielten Überdrücke bis >400 bar ohne gefährliche mechanische Schäden; 120 bar hatte keinen Effekt auf das Signal.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            94
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Ergebnis des IEC 61298‑2 125°C Tests für die 508 mit CN‑PCB (PCB 114982, Simanel)?",
+        "context": "",
+        "answer": "Pass — insgesamt bestanden; eine Auffälligkeit wurde durch Austausch des Kabels behoben; Stift‑Durchmesser im Toleranzbereich; CN‑PCB beeinflusste die Messleistung nicht.",
+        "history": "",
+        "ref_Answer": "Pass — insgesamt bestanden; eine Auffälligkeit wurde durch Austausch des Kabels behoben; Stift‑Durchmesser im Toleranzbereich; CN‑PCB beeinflusste die Messleistung nicht.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            94
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Schweißleistungen wurden beim 560 p18 zur Drift‑Identifikation verglichen?",
+        "context": "",
+        "answer": "540 W und 200 W (jeweils mit und ohne Conditioning auf 320% FS).",
+        "history": "",
+        "ref_Answer": "540 W und 200 W (jeweils mit und ohne Conditioning auf 320% FS).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            95
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Womit wurde die 560 Messzelle mit FR4‑Print geklebt und gelötet?",
+        "context": "",
+        "answer": "Mit Semicosil verklebt und per Pin gelötet.",
+        "history": "",
+        "ref_Answer": "Mit Semicosil verklebt und per Pin gelötet.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            95
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Positionen zeigten negative %FS beim 711 RA08279?",
+        "context": "",
+        "answer": "Pos.1: -17 %FS; Pos.3: -3 %FS.",
+        "history": "",
+        "ref_Answer": "Pos.1: -17 %FS; Pos.3: -3 %FS.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            96
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wie performten die 450er im Damp-Heat-Test (+40°C, 80% rH, 24h)?",
+        "context": "",
+        "answer": "Zwei Prüflinge zeigten +1% FS Feuchteabhängigkeit mit 0.5% FS Drift; Prüfling 6329 driftete von −3% FS auf −8% FS (Gesamt −5% FS).",
+        "history": "",
+        "ref_Answer": "Zwei Prüflinge zeigten +1% FS Feuchteabhängigkeit mit 0.5% FS Drift; Prüfling 6329 driftete von −3% FS auf −8% FS (Gesamt −5% FS).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            97
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Temperaturbereiche wurden bei den Performance-Tests des Ultraschall-Sensors für PPS 40% GF und Grivory HT XE 60% GF verwendet?",
+        "context": "",
+        "answer": "PPS 40% GF: 25°C–90°C; Grivory HT XE 60% GF: 25°C–90°C.",
+        "history": "",
+        "ref_Answer": "PPS 40% GF: 25°C–90°C; Grivory HT XE 60% GF: 25°C–90°C.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            99
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche glasfaserverstärkten Kunststoffe (mit Glasfaseranteil) wurden beim Ultraschall-Sensor geprüft?",
+        "context": "",
+        "answer": "PPS 40% GF; Grivory HT XE 60% GF; PSU 30% GF (Ultrason S 2010 G6 UN); PESU 45% GF (Ultrason Dimension E0510 G9).",
+        "history": "",
+        "ref_Answer": "PPS 40% GF; Grivory HT XE 60% GF; PSU 30% GF (Ultrason S 2010 G6 UN); PESU 45% GF (Ultrason Dimension E0510 G9).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            99
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde Stahl beim Ultraschall-Sensor getestet und welche Bearbeitungszustände/Temperaturbereiche sind angegeben?",
+        "context": "",
+        "answer": "Ja — Steel (eroded): 25°C–90°C; Steel (hydroformed): 15°C–90°C.",
+        "history": "",
+        "ref_Answer": "Ja — Steel (eroded): 25°C–90°C; Steel (hydroformed): 15°C–90°C.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            99
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wie hoch ist der Welding Offset beim 560 Loetrohr?",
+        "context": "",
+        "answer": "0,35 % des Full Scale (FS).",
+        "history": "",
+        "ref_Answer": "0,35 % des Full Scale (FS).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            100
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Kann das vorhandene Laser Welding System für das 560 verwendet werden und welche Einschränkung ist in China zu beachten?",
+        "context": "",
+        "answer": "Ja, es ist keine Umrüstung nötig, nur ein neues Schweißprogramm. In China fehlt ein wobble head, dadurch ist der Laserwinkel größer – Spalt prüfen; ggf. den Stud um einige Zehntel Millimeter verlängern.",
+        "history": "",
+        "ref_Answer": "Ja, es ist keine Umrüstung nötig, nur ein neues Schweißprogramm. In China fehlt ein wobble head, dadurch ist der Laserwinkel größer – Spalt prüfen; ggf. den Stud um einige Zehntel Millimeter verlängern.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            100
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Freezing-Tests sind in den UL2.2 Samples aufgeführt?",
+        "context": "",
+        "answer": "Freezing test - sensor (T01.02) und Freezing test - sensor (Norm 1) (Testlevel −40°C und 40°C).",
+        "history": "",
+        "ref_Answer": "Freezing test - sensor (T01.02) und Freezing test - sensor (Norm 1) (Testlevel −40°C und 40°C).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            103
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Druck- und Temperatur-Testlevel sind für die IEC 61298-2 Charakteristikslinie im UL2.2 angegeben?",
+        "context": "",
+        "answer": "Druck: 0, 2, 4.5, 9, 13.5, 16, 18 bar g; Temperatur: −15, 23, 50, 80, 110, 150 °C.",
+        "history": "",
+        "ref_Answer": "Druck: 0, 2, 4.5, 9, 13.5, 16, 18 bar g; Temperatur: −15, 23, 50, 80, 110, 150 °C.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            103
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde für die Produktionsfreigabe der Linie 528 in China eine IEC 61298-2 Charakteristiklinienprüfung durchgeführt?",
+        "context": "",
+        "answer": "Ja — IEC 61298-2 Prüfung durchgeführt (−40…125 °C, voller Druckbereich); Ergebnis: Pass, keine Findings.",
+        "history": "",
+        "ref_Answer": "Ja — IEC 61298-2 Prüfung durchgeführt (−40…125 °C, voller Druckbereich); Ergebnis: Pass, keine Findings.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            104
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Temperaturhysterese wurde im -15…125°C Test für Huba 528 gemessen?",
+        "context": "",
+        "answer": "Durchschnitt 0.09% FSO (Min 0.07% FSO, Max 0.11% FSO).",
+        "history": "",
+        "ref_Answer": "Durchschnitt 0.09% FSO (Min 0.07% FSO, Max 0.11% FSO).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            106
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wie unterschieden sich 1459800.001_K563_CH und K563_CN in Temperaturdrift und Genauigkeit?",
+        "context": "",
+        "answer": "K563_CN zeigte durchschnittliche Temperaturdrift 0.89% FSO (K563_CH 0.38%); K563_CN wich um 0.51% vom CH ab und unterschritt die ±0.9% FSO-Anforderung minimal, wurde aber als Pass eingestuft.",
+        "history": "",
+        "ref_Answer": "K563_CN zeigte durchschnittliche Temperaturdrift 0.89% FSO (K563_CH 0.38%); K563_CN wich um 0.51% vom CH ab und unterschritt die ±0.9% FSO-Anforderung minimal, wurde aber als Pass eingestuft.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            107
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Was wurde beim 560 (Alternativ Stahl Ugitech 1.4016) verglichen?",
+        "context": "",
+        "answer": "Alternative Ugitech Stahl 1.4016 (ohne Vorbehandlung) gegen die bestehende 1.4016 und zwei Schweißlaser‑Typen (Wobble‑Head vs. Standard).",
+        "history": "",
+        "ref_Answer": "Alternative Ugitech Stahl 1.4016 (ohne Vorbehandlung) gegen die bestehende 1.4016 und zwei Schweißlaser‑Typen (Wobble‑Head vs. Standard).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            112
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Für welchen Membransensor wird Kyocera qualifiziert?",
+        "context": "",
+        "answer": "Für den Membransensor B0 K96.0 rel P1 W9.6 d0.17.",
+        "history": "",
+        "ref_Answer": "Für den Membransensor B0 K96.0 rel P1 W9.6 d0.17.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            117
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Membran-Sensor-Geometrie wurde für Kyocera qualifiziert?",
+        "context": "",
+        "answer": "Membran-Sensor A0 K96.0 diff P0.3 W17.4 d0.17.",
+        "history": "",
+        "ref_Answer": "Membran-Sensor A0 K96.0 diff P0.3 W17.4 d0.17.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            118
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Sensorzelle bzw. welches Produkt ist von der Plastic 70 Rezepturänderung betroffen?",
+        "context": "",
+        "answer": "Membrane sensor A K96.0 diff p0.6 W17.4 FK38.1 d0.25 (114786) — die Sensorzelle des Produkts 692.",
+        "history": "",
+        "ref_Answer": "Membrane sensor A K96.0 diff p0.6 W17.4 FK38.1 d0.25 (114786) — die Sensorzelle des Produkts 692.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            119
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Bei welchen Temperaturen und welcher Luftfeuchte wurde die Vergleichsprüfung der Plastic 70‑Rezeptur durchgeführt?",
+        "context": "",
+        "answer": "Bei 25°C bis 40°C und 93% rH über 10 Tage (ohne Druck).",
+        "history": "",
+        "ref_Answer": "Bei 25°C bis 40°C und 93% rH über 10 Tage (ohne Druck).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            119
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Temperaturdrift-Werte (Durchschnitt/Minimum/Maximum) wurden für Plastic 70 old und Plastic 70 new gemessen?",
+        "context": "",
+        "answer": "Plastic 70 old: Avg 0.15% FSO, Min 0.01% FSO, Max 0.42% FSO. Plastic 70 new: Avg 0.02% FSO, Min 0.01% FSO, Max 0.28% FSO.",
+        "history": "",
+        "ref_Answer": "Plastic 70 old: Avg 0.15% FSO, Min 0.01% FSO, Max 0.42% FSO. Plastic 70 new: Avg 0.02% FSO, Min 0.01% FSO, Max 0.28% FSO.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            119
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche SilGel-Verhältnisse wurden bei den IP67-Tests der 5xx für 4‑, 10‑ und 16‑bar Sensoren verwendet?",
+        "context": "",
+        "answer": "4 bar: 1:1.27 (weicher), 10 bar: 1:1.25, 16 bar: 1:1.20.",
+        "history": "",
+        "ref_Answer": "4 bar: 1:1.27 (weicher), 10 bar: 1:1.25, 16 bar: 1:1.20.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            120
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wie viele 5xx fielen beim beschleunigten Altern (125°C, 90%FS, 1000h) aus und was war die Ursache?",
+        "context": "",
+        "answer": "Vier von zehn im ersten Test fielen aus (später insgesamt sieben DUT inkl. 20‑bar Gruppe). Ursache: thermische Schäden/ Korrosion an PCBs und dunkle Flux‑Verfärbung; Ersatz‑PCB stellte bei einer Probe die Funktion wieder her.",
+        "history": "",
+        "ref_Answer": "Vier von zehn im ersten Test fielen aus (später insgesamt sieben DUT inkl. 20‑bar Gruppe). Ursache: thermische Schäden/ Korrosion an PCBs und dunkle Flux‑Verfärbung; Ersatz‑PCB stellte bei einer Probe die Funktion wieder her.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 3,
+        "instigationids": [
+            120
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Stähle wurden in der MSG 10mm Cell Series 1 verglichen?",
+        "context": "",
+        "answer": "1.4542 und 1.4435.",
+        "history": "",
+        "ref_Answer": "1.4542 und 1.4435.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            126
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Lötgläser wurden in der Untersuchung verglichen?",
+        "context": "",
+        "answer": "G018-423 und G018-249.",
+        "history": "",
+        "ref_Answer": "G018-423 und G018-249.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            126
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Gibt es Messungen zur Wobbler-Amplitude bei den 10 mm‑Zellen (0.1 mm vs 0.6 mm)?",
+        "context": "",
+        "answer": "Ja — Vergleich 0.1 mm vs 0.6 mm (Temperierung/Drift, Norm 19.0).",
+        "history": "",
+        "ref_Answer": "Ja — Vergleich 0.1 mm vs 0.6 mm (Temperierung/Drift, Norm 19.0).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            126
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Gibt es Messungen zum Wika WUC-10?",
+        "context": "",
+        "answer": "Ja, ein TCO-Performance-Test wurde durchgeführt (siehe Reportpfad).",
+        "history": "",
+        "ref_Answer": "Ja, ein TCO-Performance-Test wurde durchgeführt (siehe Reportpfad).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            127
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Temperaturbereiche wurden im TCO-Test für den WUC-10 geprüft?",
+        "context": "",
+        "answer": "-10 bis 85 °C und -40 bis 125 °C bei Umgebungsdruck (Norm 2).",
+        "history": "",
+        "ref_Answer": "-10 bis 85 °C und -40 bis 125 °C bei Umgebungsdruck (Norm 2).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            127
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Kenngrößen liefert der TCO-Performance-Test beim WUC-10?",
+        "context": "",
+        "answer": "Accuracy, Temperaturkoeffizient der Null (Tco), TC‑Hysterese und Wiederholbarkeit.",
+        "history": "",
+        "ref_Answer": "Accuracy, Temperaturkoeffizient der Null (Tco), TC‑Hysterese und Wiederholbarkeit.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            127
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde die 556 Hydrogen einem Thermal‑Shock nach IEC 60068-2-14 unterzogen?",
+        "context": "",
+        "answer": "Ja — −50 °C / +100 °C, 1 h dwell, 30 s transfer, 300 Zyklen; Signalabweichung <0.5% FS, keine Ausfälle.",
+        "history": "",
+        "ref_Answer": "Ja — −50 °C / +100 °C, 1 h dwell, 30 s transfer, 300 Zyklen; Signalabweichung <0.5% FS, keine Ausfälle.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            128
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Gibt es Langzeit‑Stabilitätsmessungen (90% FS, 85 °C, 1000 h) für die 556?",
+        "context": "",
+        "answer": "Ja — Test bei 90% (9 bar) & 85 °C für 1000 h; Signalabweichung <0.3% FS, keine Anomalien.",
+        "history": "",
+        "ref_Answer": "Ja — Test bei 90% (9 bar) & 85 °C für 1000 h; Signalabweichung <0.3% FS, keine Anomalien.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            128
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde beim PS Soda Dispenser ein 513 Waterhammer Pressure Cycles Test vorgesehen?",
+        "context": "",
+        "answer": "Ja — Purpose of Use: 513 Waterhammer Pressure Cycles.",
+        "history": "",
+        "ref_Answer": "Ja — Purpose of Use: 513 Waterhammer Pressure Cycles.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            129
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde bei RA08735-450 Atlantic ein Damp Heat Check durchgeführt?",
+        "context": "",
+        "answer": "Ja — als Performance Test: Damp heat cycles (Norm 1).",
+        "history": "",
+        "ref_Answer": "Ja — als Performance Test: Damp heat cycles (Norm 1).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            130
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Substrathersteller wurden beim Produkt 402 verglichen?",
+        "context": "",
+        "answer": "CeramTec, UniPreTec und Kyocera.",
+        "history": "",
+        "ref_Answer": "CeramTec, UniPreTec und Kyocera.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            131
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Gibt es IEC 61298-2 Charakteristik-Tests für die 402 bei 50 mbar und welcher Hersteller lag am Vollskala außerhalb der Spezifikation?",
+        "context": "",
+        "answer": "Ja; bei 50 mbar war CeramTec außerhalb (0.97 % FSO), UniPreTec und Kyocera innerhalb.",
+        "history": "",
+        "ref_Answer": "Ja; bei 50 mbar war CeramTec außerhalb (0.97 % FSO), UniPreTec und Kyocera innerhalb.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            131
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde bei den 402-Prüfungen ein Nullpunktdrift beobachtet und wie wurde darauf reagiert?",
+        "context": "",
+        "answer": "Ja — der Nullpunkt driftete nach vier Tagen; die Kalibrierung wurde im unteren Toleranzbereich durchgeführt.",
+        "history": "",
+        "ref_Answer": "Ja — der Nullpunkt driftete nach vier Tagen; die Kalibrierung wurde im unteren Toleranzbereich durchgeführt.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            131
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Messungen sind für die Batch release OULD S20250718 vorgesehen?",
+        "context": "",
+        "answer": "Sensitivity, TCO (temperature coefficient of output), Zero Point und Burst Pressure.",
+        "history": "",
+        "ref_Answer": "Sensitivity, TCO (temperature coefficient of output), Zero Point und Burst Pressure.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            133
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Fälligkeitsdaten sind für Sensitivity und tco bei der Batch release OULD S20250718?",
+        "context": "",
+        "answer": "Sensitivity: 2025-07-28 15:52; tco: 2025-07-28 15:53.",
+        "history": "",
+        "ref_Answer": "Sensitivity: 2025-07-28 15:52; tco: 2025-07-28 15:53.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            133
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Beeinflusst das Fehlen des VS Schutzglas 02 die Nullpunktstabilität des 505 auf dem PL5?",
+        "context": "",
+        "answer": "Ja. Proben ohne VS Schutzglas zeigten Feuchteeintritt und Nullpunktdrift; daher ist eine Beschichtung mit VS Schutzglas für 505 erforderlich.",
+        "history": "",
+        "ref_Answer": "Ja. Proben ohne VS Schutzglas zeigten Feuchteeintritt und Nullpunktdrift; daher ist eine Beschichtung mit VS Schutzglas für 505 erforderlich.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            134
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Normen wurden für die Charakteristiklinien- und Damp-Heat-Tests am 505 verwendet?",
+        "context": "",
+        "answer": "IEC 61298-2 für die Charakteristiklinie und IEC 60068-2-78 für Damp Heat.",
+        "history": "",
+        "ref_Answer": "IEC 61298-2 für die Charakteristiklinie und IEC 60068-2-78 für Damp Heat.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            134
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Kleber wurden bei der 400 in die Qualifikation übernommen?",
+        "context": "",
+        "answer": "Loctite 366, Loctite AA3494 und DELO Photobond GB368.",
+        "history": "",
+        "ref_Answer": "Loctite 366, Loctite AA3494 und DELO Photobond GB368.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            138
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde die 400 im IEC 61298-2 Charakteristiklinien‑Test geprüft und welches Fullscale‑Ergebnis zeigte DELO Photobond GB368?",
+        "context": "",
+        "answer": "Ja; DELO Photobond GB368 zeigte die höchste Fullscale‑Abweichung mit durchschnittlich 0.48 % FSO.",
+        "history": "",
+        "ref_Answer": "Ja; DELO Photobond GB368 zeigte die höchste Fullscale‑Abweichung mit durchschnittlich 0.48 % FSO.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            138
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Beim IEC 60068-2-78 Damp‑Heat: Welche Kleber lagen beim TCG außerhalb der Toleranz?",
+        "context": "",
+        "answer": "Alle drei getesteten Kleber (Loctite 366, Loctite AA3494, DELO Photobond GB368) zeigten im TCG durchschnittlich 0.042 % FSO und lagen damit außerhalb der Toleranz.",
+        "history": "",
+        "ref_Answer": "Alle drei getesteten Kleber (Loctite 366, Loctite AA3494, DELO Photobond GB368) zeigten im TCG durchschnittlich 0.042 % FSO und lagen damit außerhalb der Toleranz.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            138
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Sind die 505 (Burn-in 45 min vs 60 min) innerhalb des angegebenen TCO von ±0.06 % FSO/K?",
+        "context": "",
+        "answer": "Ja — mit Ausnahme eines Ausreißers lagen alle DUTs (45 min und 60 min) innerhalb von ±0.06 % FSO/K.",
+        "history": "",
+        "ref_Answer": "Ja — mit Ausnahme eines Ausreißers lagen alle DUTs (45 min und 60 min) innerhalb von ±0.06 % FSO/K.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            140
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde an der MZJ PS0200-0208 (60 bar) eine Charakteristiklinie 0–60 bar bei -40–140°C gemessen?",
+        "context": "",
+        "answer": "Ja — Charakteristikmessung 0–60 bar, Temperaturbereich -40 bis 140 °C (IEC 61298-2).",
+        "history": "",
+        "ref_Answer": "Ja — Charakteristikmessung 0–60 bar, Temperaturbereich -40 bis 140 °C (IEC 61298-2).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            142
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Dient der Huba Control 560 (45 bar) als Referenz für die MZJ-Vergleiche?",
+        "context": "",
+        "answer": "Ja — Der Huba Control 560 (45 bar) wird als Referenz zum Vergleich mit der MZJ PS0200-0208 verwendet.",
+        "history": "",
+        "ref_Answer": "Ja — Der Huba Control 560 (45 bar) wird als Referenz zum Vergleich mit der MZJ PS0200-0208 verwendet.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            142
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde Ugitech Stahl 1.4016 gegen Standardstahl bei pMaxTmax getestet?",
+        "context": "",
+        "answer": "Ja – Langzeitdrift pMaxTmax getestet; Ergebnis: Pass, keine Unterschiede.",
+        "history": "",
+        "ref_Answer": "Ja – Langzeitdrift pMaxTmax getestet; Ergebnis: Pass, keine Unterschiede.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            143
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wo ist der Prüfbericht zum 520 p16 Ugitech vs Standard Steel abgelegt?",
+        "context": "",
+        "answer": "S:\\CH_Huba_E\\ELabor\\Kar\\Interne Aufträge\\520\\250911_520_p16_pMaxTmax_Ugitech.vs.Standard.pdf",
+        "history": "",
+        "ref_Answer": "S:\\CH_Huba_E\\ELabor\\Kar\\Interne Aufträge\\520\\250911_520_p16_pMaxTmax_Ugitech.vs.Standard.pdf",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            143
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde der 560 Adapter MP150 - M12x1 auf IPX7 geprüft?",
+        "context": "",
+        "answer": "Ja — Dichtheitsprüfung IP_X7 (IPX7) für 560 Adapter MP150 - M12x1 wurde durchgeführt.",
+        "history": "",
+        "ref_Answer": "Ja — Dichtheitsprüfung IP_X7 (IPX7) für 560 Adapter MP150 - M12x1 wurde durchgeführt.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            144
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Norm wird für die Characteristic line der Membrane sensor August 25 Batch verwendet?",
+        "context": "",
+        "answer": "IEC 61298-2",
+        "history": "",
+        "ref_Answer": "IEC 61298-2",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            145
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Hersteller lagen beim Damp Heat (IEC 60068-2-78) 3 mbar für Produkt 402 außerhalb der Toleranz?",
+        "context": "",
+        "answer": "Kyocera (3 von 4 Proben) sowie Mascera und UniPreTec (jeweils ein Ausreißer).",
+        "history": "",
+        "ref_Answer": "Kyocera (3 von 4 Proben) sowie Mascera und UniPreTec (jeweils ein Ausreißer).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            147
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Bei der Charakteristik-Linie (IEC 61298-2) 50 mbar für Produkt 402: Welcher Hersteller zeigt die größte Abweichung am Endpunkt?",
+        "context": "",
+        "answer": "Mascera — größte Abweichung am vollen Messbereich (≈1.64% FSO); Kyocera war innerhalb der Toleranz (≈0.46% FSO).",
+        "history": "",
+        "ref_Answer": "Mascera — größte Abweichung am vollen Messbereich (≈1.64% FSO); Kyocera war innerhalb der Toleranz (≈0.46% FSO).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            147
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Ist für die 558 M12x1 ein IP69K‑Nachweis vorgesehen?",
+        "context": "",
+        "answer": "Ja, im Text ist ein IP69K‑Nachweis für die 558 M12x1 beschrieben.",
+        "history": "",
+        "ref_Answer": "Ja, im Text ist ein IP69K‑Nachweis für die 558 M12x1 beschrieben.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            148
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Prüfnormen sind für IP6X und IPX9K angegeben?",
+        "context": "",
+        "answer": "IP6X: EN 60529; IPX9K: ISO 20653.",
+        "history": "",
+        "ref_Answer": "IP6X: EN 60529; IPX9K: ISO 20653.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            148
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde bei der MSG 560p18 die FR4-Trägerzelle mit Semicosil verklebt?",
+        "context": "",
+        "answer": "Ja — die 560er Meszelle verwendet einen FR4-Carrier, der mit Semicosil verklebt wurde.",
+        "history": "",
+        "ref_Answer": "Ja — die 560er Meszelle verwendet einen FR4-Carrier, der mit Semicosil verklebt wurde.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            149
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Dotierung der CSEM-Chips lieferte in den First Measurements brauchbare Signale?",
+        "context": "",
+        "answer": "Boron-dotierte (p‑type) Chips lieferten sofort brauchbare Signale; phosphorus-dotierte (n‑type) blieben mit ≈2 mV/V funktionsunfähig.",
+        "history": "",
+        "ref_Answer": "Boron-dotierte (p‑type) Chips lieferten sofort brauchbare Signale; phosphorus-dotierte (n‑type) blieben mit ≈2 mV/V funktionsunfähig.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            149
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wie wurde die elektrische Verbindung zwischen CSEM-Chip und PCB realisiert?",
+        "context": "",
+        "answer": "Per 25 µm Gold-Draht (Au Wedge-Bond) zwischen Chip- und PCB-Pads; zusätzlich ist ein Kontakt-Pin auf dem PCB angelötet.",
+        "history": "",
+        "ref_Answer": "Per 25 µm Gold-Draht (Au Wedge-Bond) zwischen Chip- und PCB-Pads; zusätzlich ist ein Kontakt-Pin auf dem PCB angelötet.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            149
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Temperatur, Druck und Dauer hat der High Temperature resistance test für die 578 Daikin?",
+        "context": "",
+        "answer": "+80°C, 3 bar, 1000 h.",
+        "history": "",
+        "ref_Answer": "+80°C, 3 bar, 1000 h.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            151
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Gibt es einen Accelerated cycle sweat test für die 578 Daikin – welche relative Luftfeuchte und Dauer sind vorgesehen?",
+        "context": "",
+        "answer": "Relative Luftfeuchte ≈95%, Dauer: 1 Monat (preferred).",
+        "history": "",
+        "ref_Answer": "Relative Luftfeuchte ≈95%, Dauer: 1 Monat (preferred).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            151
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Bedingungen sind für Storage: low temperature bei der 578 Daikin angegeben?",
+        "context": "",
+        "answer": "Ambient temperature −25°C, Dauer 240 h, DUTs nicht eingeschaltet.",
+        "history": "",
+        "ref_Answer": "Ambient temperature −25°C, Dauer 240 h, DUTs nicht eingeschaltet.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            151
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde beim 520 ein Torque Influence Test durchgeführt und bis zu welchem Drehmoment wurde getestet?",
+        "context": "",
+        "answer": "Ja — Torque Influence Test; geprüft bis 40 Nm (doppelter Nennanzugsmoment).",
+        "history": "",
+        "ref_Answer": "Ja — Torque Influence Test; geprüft bis 40 Nm (doppelter Nennanzugsmoment).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            152
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wie verhalten sich die 520-Sensorvarianten (Standard/Short/Long) im Standard-Gewinde bei erhöhtem Drehmoment?",
+        "context": "",
+        "answer": "Im Standard-Gewinde blieben alle drei Varianten innerhalb der spezifizierten Nullpunkt-Toleranzen, auch bei 40 Nm.",
+        "history": "",
+        "ref_Answer": "Im Standard-Gewinde blieben alle drei Varianten innerhalb der spezifizierten Nullpunkt-Toleranzen, auch bei 40 Nm.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            152
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche 520-Variante zeigte bei Gewinde-Fehlausrichtung (einseitige Distanzscheibe) den größten Nullpunktsdrift?",
+        "context": "",
+        "answer": "Die Standard-Variante zeigte den größten Drift; die Long-Variante wies nur vergleichsweise kleine Abweichungen auf.",
+        "history": "",
+        "ref_Answer": "Die Standard-Variante zeigte den größten Drift; die Long-Variante wies nur vergleichsweise kleine Abweichungen auf.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            152
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Tests wurden für die 518 New Steel Evaluation durchgeführt?",
+        "context": "",
+        "answer": "IEC 61298-2 Characteristic line (Norm 2) und IEC 61298-2 Long-term drift (Norm 8).",
+        "history": "",
+        "ref_Answer": "IEC 61298-2 Characteristic line (Norm 2) und IEC 61298-2 Long-term drift (Norm 8).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            153
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Was ist der Zweck der Untersuchung für 518 und 520?",
+        "context": "",
+        "answer": "Evaluation von Stahl‑Alternativen; Establishing baseline for new steel.",
+        "history": "",
+        "ref_Answer": "Evaluation von Stahl‑Alternativen; Establishing baseline for new steel.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            153
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Kenngrößen werden in der IEC 61298-2 Characteristic line (Norm 2) ermittelt?",
+        "context": "",
+        "answer": "Accuracy, Temperaturkoeffizient des Nullpunkts (Tco), TC des Endpunkts (Tcg), Hysterese und Repeatability.",
+        "history": "",
+        "ref_Answer": "Accuracy, Temperaturkoeffizient des Nullpunkts (Tco), TC des Endpunkts (Tcg), Hysterese und Repeatability.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            153
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Testbedingungen (Überdruck, Dauer) wurden beim 528-Lecktest in der Druckkammer verwendet?",
+        "context": "",
+        "answer": "Druckkammer mit 3 bar Überdruck; Testdauer >240 Stunden; 3 geprüfte absolute Messzellen.",
+        "history": "",
+        "ref_Answer": "Druckkammer mit 3 bar Überdruck; Testdauer >240 Stunden; 3 geprüfte absolute Messzellen.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            154
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde beim 528 ein 2.5×FS Prüfdruck für den Lecktest angewendet?",
+        "context": "",
+        "answer": "Ja — Leckdichtheitstest bei 2.5×FS (Full Scale).",
+        "history": "",
+        "ref_Answer": "Ja — Leckdichtheitstest bei 2.5×FS (Full Scale).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            154
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde beim 528 (LandiRenzo) der IEC 61298-2 Charakteristiklinien-Test durchgeführt?",
+        "context": "",
+        "answer": "Ja — IEC 61298-2 Charakteristiklinien-Tests wurden für den absoluten und den relativen Sensor durchgeführt.",
+        "history": "",
+        "ref_Answer": "Ja — IEC 61298-2 Charakteristiklinien-Tests wurden für den absoluten und den relativen Sensor durchgeführt.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            155
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wie unterscheiden sich die Bridge-Sensitivitäten der 505 mit Kyocera- vs. CeramTec-Keramik?",
+        "context": "",
+        "answer": "Kyocera 1.7 mV/V; CeramTec (innerhalb Toleranz) 1.6 mV/V; CeramTec (außer Toleranz) 1.5 mV/V.",
+        "history": "",
+        "ref_Answer": "Kyocera 1.7 mV/V; CeramTec (innerhalb Toleranz) 1.6 mV/V; CeramTec (außer Toleranz) 1.5 mV/V.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            156
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde die 505 einem 12‑bar Überdruckstest unterzogen und gab es dadurch Genauigkeitsverluste?",
+        "context": "",
+        "answer": "Ja — ca. 2 Minuten bei 12 bar; keine messbare Genauigkeitsverschlechterung; Testresultat: Pass.",
+        "history": "",
+        "ref_Answer": "Ja — ca. 2 Minuten bei 12 bar; keine messbare Genauigkeitsverschlechterung; Testresultat: Pass.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            156
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurden R16‑Lasercuts an der CeramTec‑Variante der 505 gemessen und was ergab die Messung?",
+        "context": "",
+        "answer": "Ja — R16‑Lasercuts wurden gemessen (bei CeramTec mit außer Toleranz Dicke); die Lasercuts waren nicht an ihren Grenzen.",
+        "history": "",
+        "ref_Answer": "Ja — R16‑Lasercuts wurden gemessen (bei CeramTec mit außer Toleranz Dicke); die Lasercuts waren nicht an ihren Grenzen.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            156
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde die Messzelle JDS-011006-00/01 (SUS430) von WANG Sensor auf die Kennlinie 0–120 bar getestet?",
+        "context": "",
+        "answer": "Ja — Kennlinienmessung unter Druck 0–120 bar und Temperatur ist vorgesehen (Zelle JDS-011006-00/01, WANG Sensor).",
+        "history": "",
+        "ref_Answer": "Ja — Kennlinienmessung unter Druck 0–120 bar und Temperatur ist vorgesehen (Zelle JDS-011006-00/01, WANG Sensor).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            157
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welcher Temperaturbereich ist für die IEC 61298-2 Kennlinienmessung festgelegt?",
+        "context": "",
+        "answer": "-40…125°C.",
+        "history": "",
+        "ref_Answer": "-40…125°C.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            157
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Worauf konzentriert sich die Analyse bei der WANG Sensor Zelle (JDS-011006-00/01)?",
+        "context": "",
+        "answer": "Nullpunktoffset und dessen Temperaturkoeffizient (TKO); zudem Hysterese und Reproduzierbarkeit.",
+        "history": "",
+        "ref_Answer": "Nullpunktoffset und dessen Temperaturkoeffizient (TKO); zudem Hysterese und Reproduzierbarkeit.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            157
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wie waren die Ergebnisse der IEC 61298-2 (Charakteristik) für die 505 mit China‑Substraten (Zhuhai Yueke Jinghua)?",
+        "context": "",
+        "answer": "Keine merklichen Unterschiede; TCO, TCG und Kennlinien lagen für beide Substrate innerhalb der Spezifikation (Ausnahme: ein Standard‑Substrat‑Prüfstück im 4‑bar‑Satz).",
+        "history": "",
+        "ref_Answer": "Keine merklichen Unterschiede; TCO, TCG und Kennlinien lagen für beide Substrate innerhalb der Spezifikation (Ausnahme: ein Standard‑Substrat‑Prüfstück im 4‑bar‑Satz).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            158
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Konnten die Burst‑Pressure‑Tests (p12/p25) bei der 505 durchgeführt werden?",
+        "context": "",
+        "answer": "Nein — Burst‑Tests bei 12 und 25 bar konnten nicht abgeschlossen werden; die Membran gab unter Überdruck nach und es traten Lecks über die Stahlfeder‑Haltevorrichtung auf.",
+        "history": "",
+        "ref_Answer": "Nein — Burst‑Tests bei 12 und 25 bar konnten nicht abgeschlossen werden; die Membran gab unter Überdruck nach und es traten Lecks über die Stahlfeder‑Haltevorrichtung auf.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            158
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Gab es Unterschiede bei der IEC 61298-3 Überdruckfestigkeit zwischen China‑Substraten und Standard‑Substraten bei der 505?",
+        "context": "",
+        "answer": "Nein nachweisbare Unterschiede; NP vor/nach Überdruck blieb für beide Varianten innerhalb der Spezifikation (lokale Ausnahme: ein Standard‑Prüfstück bereits vor der Messung außerhalb).",
+        "history": "",
+        "ref_Answer": "Nein nachweisbare Unterschiede; NP vor/nach Überdruck blieb für beide Varianten innerhalb der Spezifikation (lokale Ausnahme: ein Standard‑Prüfstück bereits vor der Messung außerhalb).",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 2,
+        "instigationids": [
+            158
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde ein Qualitätsvergleich zwischen Rodee und Huba (Keller) für die charakteristische Kennlinie durchgeführt?",
+        "context": "",
+        "answer": "Ja — Qualitätsvergleich Rodee / Huba (Keller) mit Purpose of Use: Characteristic Line.",
+        "history": "",
+        "ref_Answer": "Ja — Qualitätsvergleich Rodee / Huba (Keller) mit Purpose of Use: Characteristic Line.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            160
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche Lötpasten wurden beim 501 verglichen?",
+        "context": "",
+        "answer": "Genma NP303-LD155-GQ und Almit155-GQ.",
+        "history": "",
+        "ref_Answer": "Genma NP303-LD155-GQ und Almit155-GQ.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            161
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde das Flussmittel bei Genma und bei Almit entfernt?",
+        "context": "",
+        "answer": "Bei Genma wurde das Flussmittel abgespült; bei Almit wurde es nicht entfernt.",
+        "history": "",
+        "ref_Answer": "Bei Genma wurde das Flussmittel abgespült; bei Almit wurde es nicht entfernt.",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            161
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Was würde beim 578 für Daikin gemacht?",
+        "context": "",
+        "answer": "Low Temp Storage, High and Low Temp test, Accelearted Sweat test\n",
+        "history": "",
+        "ref_Answer": "Low Temp Storage, High and Low Temp test, Accelearted Sweat test\n",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            151
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Are there costreduktion projects? \n",
+        "context": "",
+        "answer": "Yes, for example Lotdraht Almit LFM-48, where a new solder-wire is evaluated. \n",
+        "history": "",
+        "ref_Answer": "Yes, for example Lotdraht Almit LFM-48, where a new solder-wire is evaluated. \n",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            71
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Wurde ein Sensor Signal Conditioner mal auf einem Biegebalken getestet\n",
+        "context": "",
+        "answer": "Ja, in der Instigation 402 with Elmos SSC wurde bereits getestet\n",
+        "history": "",
+        "ref_Answer": "Ja, in der Instigation 402 with Elmos SSC wurde bereits getestet\n",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            56
+        ]
+    },
+    {
+        "sys_prompt": "",
+        "user_prompt": "Welche chinesischen Zellen wurden getestet\n",
+        "context": "",
+        "answer": "Ascena, Wang, OULD, Shjime wurden in verschiedenen instigations getestet\n",
+        "history": "",
+        "ref_Answer": "Ascena, Wang, OULD, Shjime wurden in verschiedenen instigations getestet\n",
+        "fewshot_prompts": [],
+        "textFormat": null,
+        "difficulty": 1,
+        "instigationids": [
+            133,59, 41, 26, 77
+        ]
+    },
+  {
+    "sys_prompt": "",
+    "user_prompt": "Wie wird der Einspannversatz gemessen?\n",
+    "context": "",
+    "answer": "Sensoren werden in einen Block mit definirtem Anzugsmoment eingeschraubt\n",
+    "history": "",
+    "ref_Answer": "Sensoren werden in einen Block mit definirtem Anzugsmoment eingeschraubt\n",
+    "fewshot_prompts": [],
+    "textFormat": null,
+    "difficulty": 1,
+    "instigationids": [
+      152
+    ]
+  }
+]

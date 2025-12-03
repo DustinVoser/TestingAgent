@@ -20,6 +20,8 @@ def get_SQL_Texts_Tool(instigationids:list[int]):
     """
      Takes a list with unique instigation id's and queries all summarys from them. Returns a text, containing the texts of the given instigations.
      """
+    instigationids = sorted(instigationids, reverse=True)[:12]
+
     return get_SQL_Texts(instigationids)
 
 
@@ -115,6 +117,10 @@ def get_SQL_Texts(instigationids:list[int]):
                "WP_Findings", "WP_FunctionalState", "wp_JobType"]
 
     all_results = []
+
+    if isinstance(instigationids, (np.float64, float, int)):
+        instigationids = [instigationids]
+
     for id in instigationids:
         query=PromptLibrary.queryInstigationTexts.format(instigationid=id)
         df = elab.runQuery(query)
@@ -169,7 +175,6 @@ def triggerDatasheetsRetrieval(keywords:list[str]):
 @tool
 def queryGlossar(prompt: str):
     """You can lookup a word or definition by passing a semantic close query"""
-    print("Glossar was triggered")
     vector = ChromaDB("glossar")
     p=Prompt()
     p.user_prompt=prompt
@@ -179,8 +184,8 @@ def queryGlossar(prompt: str):
 
 @tool
 def queryDatasheets(productCodes: List[str]):
-    """Takes a list of product codes and returns available datasheets."""
-    print ("Datasheets were triggered")
+    """Takes a list of product codes (505,711, 200 etc...) and returns available datasheets."""
     vector = ChromaDB("datasheets")
-    results = vector.keywordsRetrieval(productCodes, n_results=3)
+    results = vector.keywordsRetrieval(productCodes, n_results=2)
+
     return results

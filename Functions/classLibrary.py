@@ -8,11 +8,57 @@ import json
 
 
 from openai import OpenAI
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator, conint
 
-
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, validator
 from typing import List, Literal
+
+
+
+class QAPair(BaseModel):
+    question: str = Field(
+        ...,
+        description="Eine technische Frage basierend auf dem gegebenen Text."
+    )
+    answer: str = Field(
+        ...,
+        description="Eine sehr kurze und präzise Antwort auf die Frage."
+    )
+    difficulty: conint(ge=1, le=3) = Field(
+        ...,
+        description="Der Schwierigkeitsgrad (1 = leicht, 3 = schwierig)."
+    )
+
+
+class SilverStandard(BaseModel):
+    """
+    Structured output definition for generating standardized Q&A blocks.
+    If there is not enough text to generate meaningful questions, set not_enough_text=True and return an empty list for items.
+    Otherwise, return exactly 3 items.
+    """
+
+    not_enough_text: bool = Field(
+        default=False,
+        description="True, wenn der gegebene Text zu kurz/inhaltlich unzureichend ist; in diesem Fall items leer lassen."
+    )
+
+    items: List[QAPair] = Field(
+        default_factory=list,
+        description="Liste mit Frage-Antwort-Paaren. Normalfall: genau 3 Einträge. Bei not_enough_text: 0 Einträge."
+    )
+
+    @field_validator("items")
+    def validate_items_length(cls, v, info):
+        # When not_enough_text is true, items may be empty; otherwise require exactly 3
+        data = info.data if hasattr(info, 'data') else {}
+        not_enough = data.get('not_enough_text', False)
+        if not not_enough and len(v) != 3:
+            raise ValueError("Es müssen genau 3 Frage-Antwort-Paare enthalten sein, außer wenn not_enough_text=True.")
+        if not_enough and len(v) != 0 and len(v) != 3:
+            # be lenient: allow 0 or 3 when flag is present
+            raise ValueError("Bei not_enough_text muss items leer sein.")
+        return v
+
 
 class MetaData(BaseModel):
     """Inhaltliche Metadaten und semantische Klassifikation eines Dokuments."""
@@ -144,9 +190,9 @@ class Document:
     chunks: Optional[List[str]] = None
 
 class EvalResult(BaseModel):
-    RetrievalScore: int
-    AnswerScore: int
-    UsefulnessScore: int
+    RetrievalScore: conint(ge=1, le=5)
+    AnswerScore: conint(ge=1, le=5)
+    UsefulnessScore: conint(ge=1, le=5)
     Comment: str
 
 class Prompt:
@@ -159,9 +205,11 @@ class Prompt:
         history: str = "",
         ref_Answer: str = "",
         fewshot_prompts: list[tuple[str, str]] = None,
-        textFormat=None
-
-
+        textFormat=None,
+        difficulty: int = 0,
+        instigationids: List[int] = [],
+        datasheets: List[str] = [],
+        glossar: List[str] = []
 
     ):
         self.sys_prompt = sys_prompt
@@ -172,16 +220,40 @@ class Prompt:
         self.ref_Answer = ref_Answer
         self.fewshot_prompts = fewshot_prompts or []
         self.textFormat = textFormat
+        self.difficulty = difficulty
+        self.instigationids = instigationids
+        self.datasheets = datasheets
+        self.glossar = glossar
+
 
 
 
     def to_dict(self):
+        # Ensure JSON-serializable values for complex fields
+        # fewshot_prompts may contain tuples; convert to lists for JSON
+        fewshots_serializable = [list(fp) for fp in (self.fewshot_prompts or [])]
+        # textFormat may be a class or object; store its name/string representation
+        if self.textFormat is None:
+            text_format_serializable = None
+        elif isinstance(self.textFormat, str):
+            text_format_serializable = self.textFormat
+        elif hasattr(self.textFormat, "__name__"):
+            text_format_serializable = self.textFormat.__name__
+        else:
+            text_format_serializable = type(self.textFormat).__name__
         return {
             "sys_prompt": self.sys_prompt,
             "user_prompt": self.user_prompt,
             "context": self.context,
             "answer": self.answer,
             "history": self.history,
+            "ref_Answer": self.ref_Answer,
+            "fewshot_prompts": fewshots_serializable,
+            "textFormat": text_format_serializable,
+            "difficulty": self.difficulty,
+            "instigationids": self.instigationids,
+            "datasheets": self.datasheets or [],
+            "glossar": self.glossar or []
         }
     def toConversation(self):
         return[
@@ -195,30 +267,60 @@ class Prompt:
 
     @classmethod
     def from_dict(cls, data: dict):
+        few = data.get("fewshot_prompts") or []
+        normalized_few: list[tuple[str, str]] = []
+        for fp in few:
+            if isinstance(fp, (list, tuple)) and len(fp) == 2:
+                normalized_few.append((fp[0], fp[1]))
+        text_format = data.get("textFormat", None)
+        diff = data.get("difficulty", 0)
+        try:
+            diff = int(diff)
+        except (TypeError, ValueError):
+            diff = 0
         return cls(
             sys_prompt=data.get("sys_prompt", ""),
             user_prompt=data.get("user_prompt", ""),
             context=data.get("context", ""),
             answer=data.get("answer", ""),
-            history=data.get("history", "")
+            history=data.get("history", ""),
+            ref_Answer=data.get("ref_Answer", data.get("answer", "")),
+            fewshot_prompts=normalized_few,
+            textFormat=text_format,
+            difficulty=diff,
+            instigationids=data.get("instigationids", []),
+            datasheets=data.get("datasheets", []),
+            glossar=data.get("glossar", [])
         )
 
 
-import json
-from typing import List
-
 class PromptManager:
     def __init__(self, filepath: str):
-        self.filepath = filepath
+        # Allow directory or file path; if directory, place default file inside
+        p = Path(filepath)
+        if p.exists() and p.is_dir():
+            p = p / "prompts.json"
+        elif p.suffix == "":
+            # If no extension is given, assume JSON
+            p = p.with_suffix(".json")
+        self.filepath = str(p)
 
     def load_prompts(self):
         try:
-            with open(self.filepath, "r", encoding="utf-8") as f:
+            p = Path(self.filepath)
+            if not p.exists():
+                return []
+            # Handle empty files gracefully
+            if p.stat().st_size == 0:
+                return []
+            with p.open("r", encoding="utf-8") as f:
                 data = json.load(f)
-                prompts = [Prompt.from_dict(d) for d in data]
+                return [Prompt.from_dict(d) for d in (data or [])]
+        except json.JSONDecodeError:
+            # Invalid/partial JSON — treat as empty to recover
+            return []
         except FileNotFoundError:
-            prompts = []
-        return prompts
+            return []
 
     def add_prompt(self, prompt: "Prompt"):
         # Aktuelle Prompts laden
@@ -228,8 +330,10 @@ class PromptManager:
         prompts.append(prompt)
 
         # In Datei speichern (überschreiben mit allen Prompts inkl. dem Neuen)
-        with open(self.filepath, "w", encoding="utf-8") as f:
-            json.dump([p.to_dict() for p in prompts], f, ensure_ascii=False, indent=4)
+        p = Path(self.filepath)
+        p.parent.mkdir(parents=True, exist_ok=True)
+        with p.open("w", encoding="utf-8") as f:
+            json.dump([p_.to_dict() for p_ in prompts], f, ensure_ascii=False, indent=4)
 
 
 
@@ -338,6 +442,5 @@ class llm_gpt:
             text_format=textformat
         )
         return response.output_parsed
-
 
 

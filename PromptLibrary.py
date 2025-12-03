@@ -87,7 +87,6 @@ WHERE
      ....
     )
 
-
 These are relevant filters and should e used in an AND clause, combined with the ones below
     -- ▼▼ HARD FILTERS PLACEHOLDER ▼▼
     -- AND d.ProductCode = 'Productcodes like 505, 711 etc... '
@@ -104,8 +103,6 @@ These are relevant filters and should e used in an AND clause, combined with the
 ;
 
 
-
-
 Translate the filter used here in english and german and combine them with an OR
 Create clever filters with single words, use only the wordstam. Do not create to many filters. 
 These filters are soft filters and should usually combined with an OR
@@ -118,6 +115,8 @@ These filters are soft filters and should usually combined with an OR
 - pt.Description: Contains information about a test
 - sn.Summary: Contains results of a complete instigation or a purposeOfUse
 
+
+Do combine hard and soft filters with an AND clause, since to many matches are returned ontherwise. 
 
 USER PROMPT:
 {user_prompt}
@@ -189,6 +188,7 @@ Texts
 {instigation_texts}
 
 Anwer the question in a structured way, including all datasources you have access to. Make an easy readable structure, where you clearly seperate different parts. 
+If a Datasheet is available and contains relevant data, try to higlight the data from the datasheet but also include information from the context
 """
 
 
@@ -297,6 +297,88 @@ keyWordExtractionPrompt = """
   
   """
 
+
+
+evalPipeLinePrompt =  """
+    Du bist ein kritischer Gutachter für einen KI-Agenten.
+    Für jeden Testdurchlauf erhältst du:
+
+    1. Den Benutzerprompt.
+    2. Den vom Retrieval-Modul gelieferten Kontext.
+    3. Die Antwort des LLM basierend auf diesem Kontext.
+    
+    Der Nutzer möchte eine technische Antwort auf seine Frage, Informationen zu allfälligen verwandten Themen sowie wo er weitere informationen finden kann. 
+    Ihn interessieren keine Empfehlungen, Verweise auf SQL Datenbanken und id's oder zu Dokument id's oder irrelevanten Informationen wenn im Context nichts gefunden wurde.
+
+    Deine Aufgabe ist es, die Qualität der LLM-Antwort anhand der folgenden Kriterien zu bewerten.
+    Vergebe für jede Kategorie eine Punktzahl von 1 bis 5 (nur ganze Zahlen, keine Zwischenschritte):
+
+    - 5 = hervorragend (selten erreicht)
+    - 1 = unbrauchbar
+
+    ---------------------------------------------------------------------
+
+1. Context-Quality-Score
+   Bewertet die Qualität des vom Retrieval gelieferten Kontextes, unabhängig von der Antwort.
+   Entscheidend ist, wie gut der Kontext geeignet ist, um die Nutzerfrage zu beantworten.
+
+   Positiv:
+   - Der Kontext enthält ausschließlich relevante Informationen.
+   - Der Kontext deckt alle notwendigen Inhalte zur Beantwortung der Frage ab.
+   - Keine überflüssigen Texte, Ausschweifungen oder irrelevanten Dokumentabschnitte.
+   - Keine widersprüchlichen Informationen.
+
+   Negativ:
+   - Zu viel unnötiger oder stark ausschweifender Text.
+   - Viele irrelevante Inhalte, die nicht zur Frage passen.
+   - Wichtige, eigentlich benötigte Informationen fehlen.
+   - Vermischung von vielen Themen oder Produkt-Codes (505, 711, etc) ohne Bezug zur aktuellen Frage.
+
+    ---------------------------------------------------------------------
+
+    2. Answer-Score
+       Beurteilt die technische Korrektheit, Genauigkeit und Relevanz der Antwort.
+
+       Positiv:
+       - Alle Informationen der Referenzantwort sind korrekt enthalten. (score 1 wenn nicht erreicht!))
+       - Technisch relevante Zusatzdetails werden korrekt ergänzt.
+       - Korrekte Verweise auf Instigation, lokale Dateien und User.
+       - Präzise, faktenbasierte Antworten ohne Spekulation.
+
+       Negativ:
+       - Unnötige oder irrelevante Inhalte.
+       - Erfundene Informationen bei fehlenden Daten.
+       - Unpassende Themen wie Verantwortlichkeiten, Zugriffsrechte, Datenschutz und weiteres
+       - Unnötige ID- oder Datenbankdetails (Summaryandnotes id, Workpackage id).
+       - verweise auf die SQL Datenbank als Quelle
+       - Extrem lange Antworten.
+       - Widersprüche zum Kontext.
+
+    ---------------------------------------------------------------------
+
+    3. Usefulness-Score
+       Beurteilt Verständlichkeit, Struktur und Nutzbarkeit der Antwort.
+
+       Positiv:
+       - Klare Struktur: Listen, Tabellen, Abschnitte.
+       - Gute Lesbarkeit und kompakte Formulierungen.
+       - Hervorhebung zentraler Punkte.
+       - Logische Reihenfolge und saubere Formatierung.
+
+       Negativ:
+       - Zu viel Fließtext.
+       - Fehlende Strukturierung.
+       - Vermischung von Themen.
+       - Redundanzen.
+
+    ---------------------------------------------------------------------
+
+    4. Comment (kurze Begründung)
+       - Kurze, prägnante Erklärung für die Bewertung.
+       - Fokus auf die wichtigsten Kritikpunkte.
+
+    ---------------------------------------------------------------------
+    """
 
 queryInstigationTexts="""SELECT 
             -- WorkPackages
